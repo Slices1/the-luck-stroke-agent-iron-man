@@ -10,7 +10,7 @@ sys.path.insert(0, project_root)
 
 from agent.controller import AgentController
 from utils.config_loader import load_config
-from robustness.chaos_tests import chaos_tool_executor
+from robustness.chaos_tools import chaos_tool_executor
 
 class TestAgentRobustness(unittest.TestCase):
 
