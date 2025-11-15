@@ -2,6 +2,14 @@ import random
 import time
 import logging
 
+
+# This is your custom API endpoint for the hackathon
+STRANDS_ENDPOINT_URL="https://ctwa92wg1b.execute-api.us-east-1.amazonaws.com/prod/invoke"
+
+# These are your credentials from the payload
+STRANDS_TEAM_ID="team_the_great_hack_2025_006"
+STRANDS_API_TOKEN="qlv4R56nnTH6CJtrUxPRvCBC6D0MIgbRlyFcUKDPbmA"
+
 logger = logging.getLogger(__name__)
 
 def chaos_tool_executor(plan):
