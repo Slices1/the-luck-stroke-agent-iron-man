@@ -22,6 +22,22 @@ class AgentController:
     def run_step(self, input_data):
         self.logger.debug(f"Received new step with input: {input_data}")
 
+        # --- Simple Tool Detection: arithmetic addition ---
+        # If user input contains a simple addition expression like "3+4" or "3 + 4",
+        # call the add_numbers tool and include the result when calling the LLM.
+        import re
+        addition_match = re.search(r"(-?\d+(?:\.\d+)?)\s*\+\s*(-?\d+(?:\.\d+)?)", str(input_data))
+        augmented_input = input_data
+        if addition_match:
+            a_str, b_str = addition_match.group(1), addition_match.group(2)
+            try:
+                sum_val, rep = tools.add_numbers(a_str, b_str)
+                self.logger.info(f"Detected addition in input. Computed: {rep}")
+                # Append the computed result to the input so the LLM sees it.
+                augmented_input = f"{input_data} [computed_addition: {rep}]"
+            except Exception:
+                self.logger.warning("Addition tool failed; proceeding without computed result.")
+
         # --- Optimisation Team: Fast Path Check ---
         fast_result = fast_paths.fast_path_check(input_data)
         if fast_result:
@@ -48,7 +64,8 @@ class AgentController:
             self.logger.debug(f"Model selected: {model_name}")
 
             # 2. Reason (Agent-Logic Team)
-            plan = reasoning.plan(input_data, self.memory, self.model)
+            # Pass the augmented input (may contain computed results) to reasoning
+            plan = reasoning.plan(augmented_input, self.memory, self.model)
             self.logger.debug(f"Plan generated: {plan}")
 
             # 3. Execute Tool (Agent-Logic + Robustness Team)
