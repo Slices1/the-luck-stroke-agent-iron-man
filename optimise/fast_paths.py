@@ -17,7 +17,7 @@ def fast_path_check(input_data: str) -> str | None:
 
     # --- Standard Greetings and Thanks ---
     if normalized_input in ["hello", "hi", "hey", "hello iron man track!"]:
-        return "Hello there! How can I assist you on this path we're sharing?"
+        return "Hello there! How can I assist you?"
 
     if "thank you" in normalized_input or "thanks" in normalized_input:
         return "You're most welcome. It's a pleasure to be of service."
