@@ -27,8 +27,6 @@ def validate_input(input_data: str):
     logger.debug("Validation successful.")
     return True
 
-
-
 def addition(nums: list[int]) -> dict:
     '''calculate the sum of several numbers.
         nums: list of numbers need to be add together
