@@ -12,7 +12,7 @@ sys.path.insert(0, project_root)
 from agent.controller import AgentController
 from utils.logging_utils import setup_logging
 from utils.config_loader import load_config
-from robustness.chaos_tests import chaos_tool_executor
+from robustness.chaos_tools import chaos_tool_executor
 
 def main():
     # 1. Setup Logging (Documentation/Demo Team)
