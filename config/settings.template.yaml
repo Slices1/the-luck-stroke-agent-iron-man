@@ -1,0 +1,18 @@
+# -----------------------------
+# Agent Configuration
+# -----------------------------
+api_keys:
+  openai: "INSERT_KEY_HERE"
+  anthropic: "INSERT_KEY_HERE"
+
+# -----------------------------
+# Iron Man Track Settings
+# -----------------------------
+timeouts:
+  step: 10      # Max seconds per agent step
+  total: 120    # Max seconds for the entire run
+
+# Model preferences
+models:
+  fast_model: "claude-3-haiku-20240307"
+  powerful_model: "claude-3-opus-20240229"

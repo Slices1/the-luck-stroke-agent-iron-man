@@ -1,0 +1,49 @@
+version: 1
+disable_existing_loggers: False
+
+formatters:
+  simple:
+    format: "%(asctime)s - [%(levelname)s] - [%(name)s] - %(message)s"
+  detailed:
+    format: "%(asctime)s - [%(levelname)s] - %(name)s:%(lineno)d - %(funcName)s - %(message)s"
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+
+  file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: detailed
+    filename: "agent_run.log" # Log file
+    mode: "w" # 'w' to overwrite on each run, 'a' to append
+
+# Setup loggers for different modules
+loggers:
+  DemoRunner:
+    level: INFO
+    handlers: [console]
+    propagate: no
+    
+  AgentController:
+    level: DEBUG
+    handlers: [console]
+    propagate: no
+
+  # Set optimisation/robustness modules to be less noisy
+  optimise:
+    level: INFO
+    handlers: [console]
+    propagate: no
+  robustness:
+    level: INFO
+    handlers: [console]
+    propagate: no
+
+# Default logging for all other modules
+root:
+  level: INFO
+  handlers: [console]
