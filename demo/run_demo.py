@@ -72,5 +72,20 @@ def main():
     logger.info(f"Output: '{output}'")
     logger.info("------------------------------\n")
 
+    # --- Interactive mode: accept user input and send to the LLM ---
+    logger.info("--- [Interactive mode] Type 'quit' or press Enter on empty line to exit ---")
+    try:
+        while True:
+            # Use built-in input() so this works in consoles
+            user_input = input("You: ")
+            if not user_input or user_input.strip().lower() in ("quit", "exit"):
+                logger.info("Exiting interactive mode.")
+                break
+            # This will cause reasoning.plan to call the model (LLM) and then the tool executor
+            output = agent.run_step(user_input)
+            print(f"Agent: {output}")
+    except (KeyboardInterrupt, EOFError):
+        logger.info("Interactive session terminated by user.")
+
 if __name__ == "__main__":
     main()

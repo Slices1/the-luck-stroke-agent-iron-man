@@ -42,12 +42,13 @@ class AgentController:
         self.logger.info("Cache miss, proceeding with full pipeline.")
 
         # --- Agent-Logic Team: Core Loop ---
+        plan = None
         try:
             # 1. Select Model (Optimisation Team)
             model_name = model_selector.choose_model(task_type="default")
             self.logger.debug(f"Model selected: {model_name}")
 
-            # 2. Reason (Agent-Logic Team)
+            # 2. Reason (Agent-Logic Team) - may call model.query internally
             plan = reasoning.plan(input_data, self.memory, self.model)
             self.logger.debug(f"Plan generated: {plan}")
 
@@ -58,6 +59,8 @@ class AgentController:
 
         except Exception as e:
             # --- Robustness Team: Error Handling ---
+            # Ensure we pass the (possibly None) plan to the handler to avoid
+            # referencing an uninitialized variable.
             self.logger.error(f"An error occurred during agent step: {e}", exc_info=True)
             return error_handlers.handle_tool_failure(e, plan)
 
