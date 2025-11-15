@@ -21,7 +21,7 @@ The main entry point is `demo/run_demo.py`. It will automatically find the proje
 pip install PyYAML
 
 # Run the main demo script
-python demo/run_demo.py
+python3.11 demo/run_demo.py
 ```
 
 ## 🧪 How to Test
