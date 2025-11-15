@@ -33,36 +33,14 @@ S    imulates executing a tool based on the agent's plan.
 
 
 def add_numbers(a, b):
-    """Add two or more numbers.
+    """A small utility/tool that adds two numbers.
 
-    Usage:
-      add_numbers("2+3+4")
-      add_numbers(2, 3, 4)
-      add_numbers(["2", "3.5", 4])
-
-    Returns (numeric_sum, representation_string) where representation_string is
-    like "2 + 3 + 4 = 9".
+    Accepts numeric strings or numbers. Returns a tuple (sum, representation).
+    The representation is a friendly string suitable for including in prompts.
     """
     logger.info(f"add_numbers called with: {a}, {b}")
     try:
-        import re
-
-        # Normalize inputs into a flat list of parts (strings or numbers)
-        parts = []
-        # If caller passed a single iterable as 'a' and b is missing/None
-        if b is None and isinstance(a, (list, tuple)):
-            parts = list(a)
-        # If caller passed a single string expression like "2+3+4"
-        elif b is None and isinstance(a, str) and '+' in a:
-            parts = [p.strip() for p in re.split(r"\+", a) if p.strip()]
-        else:
-            # General case: combine provided positional args
-            # Note: original signature had (a, b), but we support extra args
-            provided = [a]
-            if b is not None:
-                provided.append(b)
-            parts = provided
-
+        # Convert to float if contains a dot, otherwise int where possible
         def to_num(x):
             if isinstance(x, (int, float)):
                 return x
@@ -71,22 +49,14 @@ def add_numbers(a, b):
                 return float(sx)
             return int(sx)
 
-        nums = [to_num(p) for p in parts]
-        result = sum(nums)
-
+        na = to_num(a)
+        nb = to_num(b)
+        result = na + nb
         # normalize int-like floats to int for nicer display
         if isinstance(result, float) and result.is_integer():
             result = int(result)
 
-        rep_parts = []
-        for n in nums:
-            # show ints without decimal point
-            if isinstance(n, float) and n.is_integer():
-                rep_parts.append(str(int(n)))
-            else:
-                rep_parts.append(str(n))
-
-        rep = " + ".join(rep_parts) + f" = {result}"
+        rep = f"{na} + {nb} = {result}"
         logger.debug(f"add_numbers result: {rep}")
         return result, rep
     except Exception as e:

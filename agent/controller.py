@@ -26,13 +26,12 @@ class AgentController:
         # If user input contains a simple addition expression like "3+4" or "3 + 4",
         # call the add_numbers tool and include the result when calling the LLM.
         import re
-        # Match a chain of additions like "2+3+4" or "2 + 3 + 4" (at least one '+')
-        addition_match = re.search(r"(-?\d+(?:\.\d+)?(?:\s*\+\s*-?\d+(?:\.\d+)?)+)", str(input_data))
+        addition_match = re.search(r"(-?\d+(?:\.\d+)?)\s*\+\s*(-?\d+(?:\.\d+)?)", str(input_data))
         augmented_input = input_data
         if addition_match:
-            expr = addition_match.group(1)
+            a_str, b_str = addition_match.group(1), addition_match.group(2)
             try:
-                sum_val, rep = tools.add_numbers(expr)
+                sum_val, rep = tools.add_numbers(a_str, b_str)
                 self.logger.info(f"Detected addition in input. Computed: {rep}")
                 # Append the computed result to the input so the LLM sees it.
                 augmented_input = f"{input_data} [computed_addition: {rep}]"
