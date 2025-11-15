@@ -1,9 +1,6 @@
 import logging
 import time
 
-from strands import Agent
-from strands.models.openai import OpenAIModel
-
 logger = logging.getLogger(__name__)
 
 class LLMModel:
@@ -17,17 +14,11 @@ class LLMModel:
         logger.debug(f"Querying model {self.model_name} with prompt: {prompt[:50]}...")
         time.sleep(0.1) # Simulate network latency
         return f"This is a dummy LLM response to '{prompt}'"
-        
 
 def execute_tool(plan: str):
     """
 S    imulates executing a tool based on the agent's plan.
     """
-
-
-    agent = Agent()
-    print(agent("Summarise the great gatsby in one sentence."))
-
     logger.info(f"Executing tool with plan: {plan}")
     
     # Simulate tool work
