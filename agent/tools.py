@@ -30,3 +30,35 @@ S    imulates executing a tool based on the agent's plan.
         
     tool_result = f"Tool successfully executed plan: '{plan}'"
     return tool_result
+
+
+def add_numbers(a, b):
+    """A small utility/tool that adds two numbers.
+
+    Accepts numeric strings or numbers. Returns a tuple (sum, representation).
+    The representation is a friendly string suitable for including in prompts.
+    """
+    logger.info(f"add_numbers called with: {a}, {b}")
+    try:
+        # Convert to float if contains a dot, otherwise int where possible
+        def to_num(x):
+            if isinstance(x, (int, float)):
+                return x
+            sx = str(x).strip()
+            if '.' in sx:
+                return float(sx)
+            return int(sx)
+
+        na = to_num(a)
+        nb = to_num(b)
+        result = na + nb
+        # normalize int-like floats to int for nicer display
+        if isinstance(result, float) and result.is_integer():
+            result = int(result)
+
+        rep = f"{na} + {nb} = {result}"
+        logger.debug(f"add_numbers result: {rep}")
+        return result, rep
+    except Exception as e:
+        logger.error(f"Failed to add numbers: {a}, {b} - {e}")
+        raise
