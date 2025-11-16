@@ -42,7 +42,7 @@ class TreeOfThoughtAgent:
 
 
 class StandardAgent:
-    """Standard Agent using Claude Sonnet 3.5 via Strands."""
+    """Standard Agent with dynamic model selection based on prompt difficulty."""
 
     def __init__(self):
         self.logger = logging.getLogger(__name__)
@@ -50,19 +50,74 @@ class StandardAgent:
         if not STRANDS_AVAILABLE:
             raise ImportError("Strands is not installed. Please install strands package.")
 
+        # Models in decreasing capability order
+        self.models = {
+            'high': 'anthropic.claude-3-5-sonnet-20240620-v1:0',
+            'medium': 'anthropic.claude-3-haiku-20240307-v1:0',
+            'low': 'us.amazon.nova-lite-v1:0'
+        }
+
+        # Initialize a classifier agent to assess difficulty (using fastest model)
         try:
-            # Initialize Strands agent with Claude Sonnet 3.5
-            self.agent = Agent(model="anthropic.claude-3-5-sonnet-20240620-v1:0")
-            self.logger.info(f"Standard Agent initialized with Strands Agent (Claude Sonnet 3.5)")
+            self.classifier_agent = Agent(model=self.models['low'])
+            self.logger.info(f"Standard Agent initialized with dynamic model selection")
         except Exception as e:
-            self.logger.error(f"Failed to initialize Strands Agent: {e}")
+            self.logger.error(f"Failed to initialize classifier agent: {e}")
             raise
 
-    def run(self, user_input):
-        """Process input using standard approach via Strands."""
+    def assess_difficulty(self, user_input):
+        """Assess the difficulty of the prompt and return appropriate model."""
         try:
-            result = self.agent(user_input)
+            # Create a prompt to classify difficulty
+            classification_prompt = f"""Analyze the following user prompt and classify its difficulty level as either "low", "medium", or "high".
+
+Criteria:
+- LOW: Simple questions, basic facts, greetings, straightforward requests (e.g., "What is 2+2?", "Hello", "What's the weather?")
+- MEDIUM: Moderately complex tasks requiring some reasoning, explanations, or simple coding (e.g., "Explain how photosynthesis works", "Write a simple function to sort a list")
+- HIGH: Complex reasoning, multi-step problems, advanced coding, creative tasks, or nuanced analysis (e.g., "Design a distributed system", "Explain quantum entanglement with mathematical proofs", "Write a complex algorithm")
+
+User prompt: "{user_input}"
+
+Respond with ONLY one word: low, medium, or high."""
+
+            response = self.classifier_agent(classification_prompt)
+
+            # Parse response and extract difficulty
+            difficulty = response.strip().lower()
+
+            # Validate response
+            if 'low' in difficulty:
+                selected_difficulty = 'low'
+            elif 'medium' in difficulty:
+                selected_difficulty = 'medium'
+            elif 'high' in difficulty:
+                selected_difficulty = 'high'
+            else:
+                # Default to medium if unclear
+                self.logger.warning(f"Unclear difficulty classification: {response}. Defaulting to medium.")
+                selected_difficulty = 'medium'
+
+            self.logger.info(f"Assessed difficulty: {selected_difficulty} for prompt: {user_input[:50]}...")
+            return self.models[selected_difficulty]
+
+        except Exception as e:
+            self.logger.error(f"Error assessing difficulty: {e}. Defaulting to medium model.")
+            return self.models['medium']
+
+    def run(self, user_input):
+        """Process input using dynamically selected model via Strands."""
+        try:
+            # Assess difficulty and select appropriate model
+            selected_model = self.assess_difficulty(user_input)
+            self.logger.info(f"Selected model: {selected_model}")
+
+            # Create agent with selected model
+            agent = Agent(model=selected_model)
+
+            # Run the actual query
+            result = agent(user_input)
             return result
+
         except Exception as e:
             self.logger.error(f"Standard Agent error: {e}", exc_info=True)
             return f"Error processing request: {e}"
@@ -73,11 +128,11 @@ class TaskDecompositionTreeAgent:
 
     def __init__(self):
         self.logger = logging.getLogger(__name__)
-        self.logger.info("Task Decomposition Agent initialized (placeholder)")
+        self.logger.info("Task Decomposition Tree Agent initialized (placeholder)")
 
     def run(self, user_input):
         """Process input using Task Decomposition Tree (placeholder)."""
-        self.logger.warning("Task Decomposition Agent called but not yet implemented")
+        self.logger.warning("Task Decomposition Tree Agent called but not yet implemented")
         return "Task Decomposition Tree Agent is not yet implemented. Please use another agent."
 
 
