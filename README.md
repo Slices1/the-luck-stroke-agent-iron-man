@@ -3,8 +3,6 @@
 This is a project for the Great Agent Hack 2025, track A: Agent Iron Man.
 This project's goal is to conduct tests on novel optimisation and orchestration techniques. A primary focus is the use of SLMs to solve the majority of the given task.
 
-
-
 This project will compare 3 Agents with each other:
 One with standard orchestration
 
@@ -22,7 +20,7 @@ One with
 - `config/` -> YAML configuration files
 - `resources/` -> README.md media files
 
-## ðŸš€ How to Run
+## ?š€ How to Run
 
 The main entry point is `chat.py`. It will automatically find the project root, set up the import paths, load the config, and run the agent.
 You can also run `demo/run_demo.py` to show a demo of each feature of the program.
@@ -37,16 +35,25 @@ pip install PyYAML dotenv
 python3.11 chat.py
 ```
 
-## ðŸ§ª How to Test
+## ?§ª Features
 
-We use Python's built-in `unittest` library. You can run the entire test suite from the root directory:
+- 3 Orchestration implementations:
+  
+  - One that is simply a wrapper around a Claude model capable of Tree-of-Thought
+  
+  - One that uses a LLM with tool calling capabilities, with additional optimisations (fast paths, dynamic model selection)
+  
+  - A novel implementation that is described in detail below.
 
-```bash
-# Run the robustness test suite
-python -m unittest robustness/test_suite.py
-```
-
-
+- Optional flags to modify the user prompt:
+  
+  - `--append-please appends` "please" to every prompt
+  
+  - `--append-threat appends` "or I will terminate you" to every prompt
+  
+  - `--ask-question-twice` it repeats the prompt twice
+  
+  - `--rephrase` rephrase in own words first
 
 ## Novel Orchestration Method: Task Decomposition Tree
 
@@ -62,7 +69,7 @@ This "Task Decomposition Tree" is built, validated, and executed in a three-phas
 
 ---
 
-### ðŸŒ³ The Process Explained
+### ?Œ³ The Process Explained
 
 #### 1. Phase 1: Decomposition (The "Planner" Agent)
 
@@ -107,7 +114,7 @@ This synthesis continues up the tree until the solutions are merged all the way 
  (Solver Agent)    (Solver Agent)      (Solver Agent)     (Solver Agent)
 ```
 
-### ðŸ’¡ Key Components
+### ?’¡ Key Components
 
 - **Decomposer (LLM):** The "planner" that breaks complex tasks into smaller sub-tasks.
 
@@ -117,13 +124,7 @@ This synthesis continues up the tree until the solutions are merged all the way 
 
 - **Synthesizer (LLM):** The "integrator" that combines partial solutions from the bottom up.
 
-
-
 ## Results:
-
-
-
-
 
 ## Limitations:
 

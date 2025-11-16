@@ -1,2 +1,0 @@
-This is a sample input query for the agent.
-What is the weather in London?
