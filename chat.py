@@ -69,6 +69,26 @@ def modify_prompt(user_input, args):
 
     return modified_input
 
+def select_agent_interactive():
+    """Prompt user to select an agent type."""
+    print("\n--- Agent Selection ---")
+    print("Please select an agent to use:")
+    print("1. Tree-of-Thought Agent")
+    print("2. Standard Agent")
+    print("3. Task Decomposition Tree Agent")
+    print("-" * 30)
+
+    while True:
+        choice = input("Enter your choice (1-3): ").strip()
+        if choice == '1':
+            return 'tree-of-thought-agent'
+        elif choice == '2':
+            return 'standard-agent'
+        elif choice == '3':
+            return 'task-decomposition-tree'
+        else:
+            print("Invalid choice. Please enter 1, 2, or 3.")
+
 def main():
     # 0. Parse Command-Line Arguments
     parser = argparse.ArgumentParser(
@@ -77,12 +97,21 @@ def main():
         epilog="""
 Examples:
   python chat.py                                    # Normal chat
+  python chat.py --agent=tree-of-thought-agent      # Use Tree-of-Thought Agent
+  python chat.py --agent=standard-agent             # Use Standard Agent
+  python chat.py --agent=task-decomposition-tree    # Use Task Decomposition Tree Agent
   python chat.py --append-please                    # Append "please" to every prompt
   python chat.py --append-threat                    # Append "or I will terminate you" to every prompt
   python chat.py --ask-question-twice               # Repeat prompt twice for LLM clarity
   python chat.py --rephrase                         # Rephrase in own words first
   python chat.py --rephrase --append-please         # Combine multiple options
         """
+    )
+    parser.add_argument(
+        '--agent',
+        type=str,
+        choices=['tree-of-thought-agent', 'standard-agent', 'task-decomposition-tree'],
+        help="Select which agent to use: tree-of-thought-agent, standard-agent, or task-decomposition-tree"
     )
     parser.add_argument(
         '--append-please',
@@ -131,9 +160,19 @@ Examples:
     config = load_config()
     logger.info(f"Config loaded. Agent timeout set to: {config.get('timeouts', {}).get('step')}")
 
+    # 2.5. Determine which agent to use
+    if args.agent:
+        # Agent specified via command line
+        agent_type = args.agent
+        logger.info(f"Agent selected via command line: {agent_type}")
+    else:
+        # Prompt user to select agent
+        agent_type = select_agent_interactive()
+        logger.info(f"Agent selected interactively: {agent_type}")
+
     # 3. Initialize Agent (Agent-Logic Team)
-    agent = AgentController(config)
-    logger.info("AgentController initialized. Ready for conversation.")
+    agent = AgentController(config, agent_type=agent_type)
+    logger.info(f"AgentController initialized with {agent_type}. Ready for conversation.")
 
     # 4. Start Interactive Chat Loop
     print("\n--- Iron Man Agent Chat ---")

@@ -20,21 +20,6 @@ One with
 - `config/` -> YAML configuration files
 - `resources/` -> README.md media files
 
-## ?š€ How to Run
-
-The main entry point is `chat.py`. It will automatically find the project root, set up the import paths, load the config, and run the agent.
-You can also run `demo/run_demo.py` to show a demo of each feature of the program.
-
-```bash
-# Make sure you've installed dependencies
-pip install PyYAML dotenv
-
-
-
-# Run the main demo script
-python3.11 chat.py
-```
-
 ## ?§ª Features
 
 - 3 Orchestration implementations:
@@ -54,6 +39,29 @@ python3.11 chat.py
   - `--ask-question-twice` it repeats the prompt twice
   
   - `--rephrase` rephrase in own words first
+
+## ?š€ How to Run
+
+The main entry point is `chat.py`. It will automatically find the project root, set up the import paths, load the config, and run the agent.
+You can also run `demo/run_demo.py` to show a demo of each feature of the program.
+
+```bash
+# Make sure you've installed dependencies
+pip3 install PyYAML python-dotenv strands-agents strands-agents-tools strands-agents-builder openvc-python pytesseract
+
+# Run the main demo script
+python3 chat.py
+```
+
+The program will ask which Agent you want to use upon running like above. Alternatively, you can pass it as an argument like below.????????
+
+```bash
+python3 chat.py --agent=tree-of-thought-agent
+python3 chat.py --agent=standard-agent
+python3 chat.py --agent=task-decomposition-tree
+```
+
+This program allows for the combination of flags (e.g. `python3 chat.py --agent=claude-wrapper --append-please`).
 
 ## Novel Orchestration Method: Task Decomposition Tree
 
