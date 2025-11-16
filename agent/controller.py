@@ -2,11 +2,12 @@ import logging
 from agent import reasoning, memory, tools
 from optimise import caching, model_selector, fast_paths, profiling
 from robustness import error_handlers, validators
+from callingAgent import agent as agent
 
 class AgentController:
     def __init__(self, config):
         self.memory = memory.Memory()
-        self.model = tools.LLMModel() # Using the stub model from tools for now
+        self.model = agent() # using the agent from strands as the model
         self.config = config
         self.logger = logging.getLogger(__name__) # Gets the logger configured in run_demo
         self.tool_executor = tools.execute_tool # Default, can be swapped for testing

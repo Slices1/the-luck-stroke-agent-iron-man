@@ -11,10 +11,10 @@ AWS_SESSION_TOKEN = os.getenv("AWS_SESSION_TOKEN")
 
 agent = Agent(tools=[calculator, speak, use_computer])
 
-while True:
-    prompt = input("User> ")
-
-    agent(prompt)
+def prompting():
+    while True:
+        prompt = input("User> ")
+        agent(prompt)
 
 print()
 # To run this script, ensure you have a .env file in the same directory with the following content:

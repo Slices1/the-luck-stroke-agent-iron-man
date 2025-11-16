@@ -27,7 +27,7 @@ def main():
     logger.info(f"Config loaded. Agent timeout set to: {config.get('timeouts', {}).get('step')}")
 
     # 3. Initialize Agent (Agent-Logic Team)
-    agent = AgentController(config)
+    agent = AgentController.model()
     logger.info("AgentController initialized. Ready for conversation.")
 
     # 4. Start Interactive Chat Loop
@@ -39,7 +39,7 @@ def main():
     while True:
         try:
             # Get user input from the console
-            user_input = input("You: ")    
+            user_input = agent.callingAgent.prompting()  
             
             # Open a banner for the logs
             print("-"*13 + " Logs " + "-"*12)
@@ -49,6 +49,31 @@ def main():
             if user_input.lower() in ['exit', 'quit']:
                 print("Agent: Goodbye!")
                 logger.info("Chat session ended by user.")
+                break  # Exit the while loop
+
+            if user_input.lower() in ['switch agent']:
+                print("Select an agent to switch to (1, 2, 3): ")
+                if user_input.lower() in ['1', 'one']:
+                    print("Agent 1 is chosen. Enter your query:")
+                    # Get user input from the console
+                    user_input = input("You: ")    
+                    # Open a banner for the logs
+                    print("-"*13 + " Logs " + "-"*12)
+                    break  # Exit the while loop
+                if user_input.lower() in ['2', 'two']:
+                    print("Agent 2 is chosen. Enter your query:")
+                    # Get user input from the console
+                    user_input = input("You: ")    
+                    # Open a banner for the logs
+                    print("-"*13 + " Logs " + "-"*12)
+                    break  # Exit the while loop
+                if user_input.lower() in ['3', 'three']:
+                    print("Agent 3 is chosen. Enter your query:")
+                    # Get user input from the console
+                    user_input = input("You: ")    
+                    # Open a banner for the logs
+                    print("-"*13 + " Logs " + "-"*12)
+                    break  # Exit the while loop
                 break  # Exit the while loop
 
             # Send the input to the agent and get the response
