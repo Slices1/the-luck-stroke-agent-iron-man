@@ -20,7 +20,7 @@ One with the Task Decomposition Tree
 - `config/` -> YAML configuration files
 - `resources/` -> README.md media files
 
-## ?§ª Features
+## Features
 
 - 3 Orchestration implementations:
   
@@ -40,7 +40,7 @@ One with the Task Decomposition Tree
   
   - `--rephrase` rephrase in own words first
 
-## ?š€ How to Run
+## How to Run
 
 The main entry point is `chat.py`. It will automatically find the project root, set up the import paths, load the config, and run the agent.
 You can also run `demo/run_demo.py` to show a demo of each feature of the program.
@@ -53,7 +53,7 @@ pip3 install PyYAML python-dotenv strands-agents strands-agents-tools strands-ag
 python3 chat.py
 ```
 
-The program will ask which Agent you want to use upon running like above. Alternatively, you can pass it as an argument like below.????????
+The program will ask which Agent you want to use upon running like above. Alternatively, you can pass it as an argument like below.
 
 ```bash
 python3 chat.py --agent=tree-of-thought-agent
@@ -77,7 +77,7 @@ This "Task Decomposition Tree" is built, validated, and executed in a three-phas
 
 ---
 
-### ?Œ³ The Process Explained
+### The Process Explained
 
 #### 1. Phase 1: Decomposition (The "Planner" Agent)
 
@@ -122,7 +122,7 @@ This synthesis continues up the tree until the solutions are merged all the way 
  (Solver Agent)    (Solver Agent)      (Solver Agent)     (Solver Agent)
 ```
 
-### ?’¡ Key Components
+### Key Components
 
 - **Decomposer (LLM):** The "planner" that breaks complex tasks into smaller sub-tasks.
 
