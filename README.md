@@ -20,7 +20,7 @@ One with
 - `config/` -> YAML configuration files
 - `resources/` -> README.md media files
 
-## ?ß™ Features
+## ?¬ß¬™ Features
 
 - 3 Orchestration implementations:
   
@@ -32,15 +32,15 @@ One with
 
 - Optional flags to modify the user prompt:
   
-  - `--append-please appends` "please" to every prompt
+  - `--append-please` appends "please" to every prompt
   
-  - `--append-threat appends` "or I will terminate you" to every prompt
+  - `--append-threat` appends "or I will terminate you" to every prompt
   
   - `--ask-question-twice` it repeats the prompt twice
   
   - `--rephrase` rephrase in own words first
 
-## ?öÄ How to Run
+## ?≈°‚Ç¨ How to Run
 
 The main entry point is `chat.py`. It will automatically find the project root, set up the import paths, load the config, and run the agent.
 You can also run `demo/run_demo.py` to show a demo of each feature of the program.
@@ -77,7 +77,7 @@ This "Task Decomposition Tree" is built, validated, and executed in a three-phas
 
 ---
 
-### ?å≥ The Process Explained
+### ?≈í¬≥ The Process Explained
 
 #### 1. Phase 1: Decomposition (The "Planner" Agent)
 
@@ -93,7 +93,7 @@ After each decomposition, each *new* sub-task is passed to a "Verifier" LLM. Thi
 
 1. **Quality Check:** It verifies if the decomposition is logical and complete.
 
-2. **Leaf Node Identification:** It determines if a task is a **"leaf node"**‚Äîa task that is simple enough, well-defined, and atomic that it can be solved reliably by a smaller, faster LLM in a single shot (one-shot execution).
+2. **Leaf Node Identification:** It determines if a task is a **"leaf node"**√¢‚Ç¨‚Äùa task that is simple enough, well-defined, and atomic that it can be solved reliably by a smaller, faster LLM in a single shot (one-shot execution).
 
 If a task is *not* a leaf node, it is sent back to the "Decomposer" (Phase 1) for further breakdown. This loop continues until the entire tree is built, ending in a set of simple, actionable leaf nodes.
 
@@ -122,7 +122,7 @@ This synthesis continues up the tree until the solutions are merged all the way 
  (Solver Agent)    (Solver Agent)      (Solver Agent)     (Solver Agent)
 ```
 
-### ?í° Key Components
+### ?‚Äô¬° Key Components
 
 - **Decomposer (LLM):** The "planner" that breaks complex tasks into smaller sub-tasks.
 
