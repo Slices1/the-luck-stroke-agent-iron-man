@@ -18,7 +18,7 @@ class LLMModel:
 def execute_tool(plan: str):
     """
 S    imulates executing a tool based on the agent's plan.
-    """
+    """ 
     logger.info(f"Executing tool with plan: {plan}")
     
     # Simulate tool work
