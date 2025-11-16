@@ -1,0 +1,892 @@
+{
+  "timestamp": "2025-11-16T14:43:59.021429",
+  "agents": [
+    "tree-of-thought-agent",
+    "standard-agent",
+    "task-decomposition-tree"
+  ],
+  "levels": [
+    "L1",
+    "L2",
+    "L3"
+  ],
+  "results": [
+    {
+      "agent_type": "tree-of-thought-agent",
+      "level": "L1",
+      "total_prompts": 25,
+      "successes": 15,
+      "failures": 10,
+      "success_rate_percent": 60.0,
+      "avg_time_per_prompt_seconds": 15.867,
+      "avg_cost_per_prompt_usd": 0.0,
+      "total_agent_cost_usd": 0.0,
+      "total_verification_cost_usd": 0.018093,
+      "total_cost_usd": 0.018093,
+      "failed_prompts": [
+        {
+          "task": "L1: Task 2 (String Reversal)",
+          "prompt": "Reverse this string: 'dxzayi'",
+          "expected": "iyazxd",
+          "got": "Here's the reversed string:\n\n'iyazxd'ERROR: object of type 'AgentResult' has no len()"
+        },
+        {
+          "task": "L1: Task 2 (String Reversal)",
+          "prompt": "Reverse this string: 'mdvrxcg'",
+          "expected": "gcxrvdm",
+          "got": "Here's the reversed string:\n\ngcxrvdmERROR: object of type 'AgentResult' has no len()"
+        },
+        {
+          "task": "L1: Task 2 (String Reversal)",
+          "prompt": "Reverse this string: 'golmrjf'",
+          "expected": "fjrmlog",
+          "got": "Here's the reversed string:\n\nfjrml\u043e\u0433ERROR: object of type 'AgentResult' has no len()"
+        },
+        {
+          "task": "L1: Task 2 (String Reversal)",
+          "prompt": "Reverse this string: 'viohml'",
+          "expected": "lmhoiv",
+          "got": "Here's the reversed string:\n\nlmhoivERROR: object of type 'AgentResult' has no len()"
+        },
+        {
+          "task": "L1: Task 2 (String Reversal)",
+          "prompt": "Reverse this string: 'csrdq'",
+          "expected": "qdrsc",
+          "got": "Here's the reversed string:\n\nqdrscERROR: object of type 'AgentResult' has no len()"
+        },
+        {
+          "task": "L1: Task 4 (Palindrome Check)",
+          "prompt": "Is the word 'python' a palindrome?",
+          "expected": "False",
+          "got": "No, the word 'python' is not a palindrome.\n\nA palindrome is a word, phrase, number, or other sequenc..."
+        },
+        {
+          "task": "L1: Task 5 (Count Vowels)",
+          "prompt": "How many vowels are in the word 'apple'?",
+          "expected": "2",
+          "got": "The word 'apple' contains 2 vowels:\n\n1. The letter 'a' at the beginning\n2. The letter 'e' at the end..."
+        },
+        {
+          "task": "L1: Task 5 (Count Vowels)",
+          "prompt": "How many vowels are in the word 'rhythm'?",
+          "expected": "0",
+          "got": "The word 'rhythm' contains no vowels.\n\nWhile 'y' can sometimes function as a vowel in English words,..."
+        },
+        {
+          "task": "L1: Task 5 (Count Vowels)",
+          "prompt": "How many vowels are in the word 'banana'?",
+          "expected": "3",
+          "got": "The word 'banana' contains 3 vowels.\n\nThey are:\n- 'a' which appears three times\n\nSo, while there are..."
+        },
+        {
+          "task": "L1: Task 5 (Count Vowels)",
+          "prompt": "How many vowels are in the word 'strength'?",
+          "expected": "1",
+          "got": "The word 'strength' contains only one vowel:\n\nThe vowel is 'e'.\n\nThe other letters in the word (s, t..."
+        }
+      ]
+    },
+    {
+      "agent_type": "tree-of-thought-agent",
+      "level": "L2",
+      "total_prompts": 25,
+      "successes": 7,
+      "failures": 18,
+      "success_rate_percent": 28.0,
+      "avg_time_per_prompt_seconds": 17.252,
+      "avg_cost_per_prompt_usd": 0.0,
+      "total_agent_cost_usd": 0.0,
+      "total_verification_cost_usd": 0.018564,
+      "total_cost_usd": 0.018564,
+      "failed_prompts": [
+        {
+          "task": "L2: Task 1 (Fill-in-the-Blank Math)",
+          "prompt": "Fill in the missing numbers ( _, _ ): _ * 4 - _ / 3 = 5",
+          "expected": "(3, 9)",
+          "got": "To solve this problem, we need to find two numbers that, when inserted into the equation, make it tr..."
+        },
+        {
+          "task": "L2: Task 1 (Fill-in-the-Blank Math)",
+          "prompt": "Fill in the missing numbers ( _, _ ): _ + 2 * _ - 5 = 15",
+          "expected": "(10, 5)",
+          "got": "Let's approach this step-by-step:\n\n1) We need to find two numbers that, when inserted into the equat..."
+        },
+        {
+          "task": "L2: Task 1 (Fill-in-the-Blank Math)",
+          "prompt": "Fill in the missing numbers ( _, _ ): (100 - _) / _ + 1 = 11",
+          "expected": "(50, 5)",
+          "got": "Let's approach this step-by-step:\n\n1) We're looking for two numbers. Let's call them a and b. So our..."
+        },
+        {
+          "task": "L2: Task 1 (Fill-in-the-Blank Math)",
+          "prompt": "Fill in the missing numbers ( _, _ ): _ * _ + 4 = 20",
+          "expected": "(4, 4)",
+          "got": "To solve this, we need to find two numbers that, when multiplied together and then added to 4, equal..."
+        },
+        {
+          "task": "L2: Task 1 (Fill-in-the-Blank Math)",
+          "prompt": "Fill in the missing numbers ( _, _ ): 8 / _ + 9 * _ = 30",
+          "expected": "(2, 3)",
+          "got": "Let's approach this step-by-step:\n\n1) Let's call the first missing number a and the second missing n..."
+        },
+        {
+          "task": "L2: Task 3 (JSON Field Extraction)",
+          "prompt": "From this text: \"User Alice (id: 123) is active. Email: alice@web.com.\" Extract the user's name and ...",
+          "expected": "{\"name\": \"Alice\", \"email\": \"alice@web.com\"}",
+          "got": "Here's the extracted information in a JSON object:\n\n{\n  \"name\": \"Alice\",\n  \"email\": \"alice@web.com\"\n..."
+        },
+        {
+          "task": "L2: Task 3 (JSON Field Extraction)",
+          "prompt": "From this text: \"Log: { \"timestamp\": \"2025-01-01\", \"level\": \"ERROR\", \"message\": \"Failed login\" }.\" E...",
+          "expected": "{\"level\": \"ERROR\", \"message\": \"Failed login\"}",
+          "got": "Here's the extracted level and message in a JSON object:\n\n{\n  \"level\": \"ERROR\",\n  \"message\": \"Failed..."
+        },
+        {
+          "task": "L2: Task 3 (JSON Field Extraction)",
+          "prompt": "From this text: \"Meet Bob (bob@work.com), his manager is Carol (carol@work.com).\" Extract all names ...",
+          "expected": "{\"Bob\": \"bob@work.com\", \"Carol\": \"carol@work.com\"}",
+          "got": "Here's the extracted information in a JSON object:\n\n{\n  \"people\": [\n    {\n      \"name\": \"Bob\",\n     ..."
+        },
+        {
+          "task": "L2: Task 3 (JSON Field Extraction)",
+          "prompt": "From this text: \"ID: 9, Name: Stapler, Color: Red\" Extract the ID (as a number) and Color into a JSO...",
+          "expected": "{\"ID\": 9, \"Color\": \"Red\"}",
+          "got": "Here's the extracted information in a JSON object:\n\n{\n  \"ID\": 9,\n  \"Color\": \"Red\"\n}ERROR: object of ..."
+        },
+        {
+          "task": "L2: Task 4 (Instruction Ordering)",
+          "prompt": "Put these steps in the correct order: ['Boil water', 'Add tea bag', 'Get cup', 'Pour water']",
+          "expected": "['Get cup', 'Add tea bag', 'Boil water', 'Pour water']",
+          "got": "Here are the steps in the correct order:\n\n1. Get cup\n2. Boil water\n3. Add tea bag\n4. Pour water\n\nThi..."
+        },
+        {
+          "task": "L2: Task 4 (Instruction Ordering)",
+          "prompt": "Put these steps in the correct order: ['Add tea bag', 'Pour water', 'Boil water', 'Get cup']",
+          "expected": "['Get cup', 'Add tea bag', 'Boil water', 'Pour water']",
+          "got": "Here are the steps in the correct order:\n\n1. Get cup\n2. Boil water\n3. Add tea bag\n4. Pour water\n\nThi..."
+        },
+        {
+          "task": "L2: Task 4 (Instruction Ordering)",
+          "prompt": "Put these steps in the correct order: ['Boil water', 'Add tea bag', 'Pour water', 'Get cup']",
+          "expected": "['Get cup', 'Add tea bag', 'Boil water', 'Pour water']",
+          "got": "Here are the steps in the correct order:\n\n1. Get cup\n2. Boil water\n3. Add tea bag\n4. Pour water\n\nThi..."
+        },
+        {
+          "task": "L2: Task 4 (Instruction Ordering)",
+          "prompt": "Put these steps in the correct order: ['Pour water', 'Add tea bag', 'Boil water', 'Get cup']",
+          "expected": "['Get cup', 'Add tea bag', 'Boil water', 'Pour water']",
+          "got": "Here are the steps in the correct order:\n\n1. Get cup\n2. Boil water\n3. Add tea bag\n4. Pour water\n\nThi..."
+        },
+        {
+          "task": "L2: Task 5 (Find and Replace)",
+          "prompt": "In the sentence 'The red car and the red boat.', replace all instances of 'red' with 'blue'.",
+          "expected": "The blue car and the blue boat.",
+          "got": "Here's the sentence with all instances of 'red' replaced with 'blue':\n\nThe blue car and the blue boa..."
+        },
+        {
+          "task": "L2: Task 5 (Find and Replace)",
+          "prompt": "In the sentence 'I like apples and bananas. Apples are great.', replace all instances of 'apples' wi...",
+          "expected": "I like oranges and bananas. Apples are great.",
+          "got": "Here's the sentence with all instances of 'apples' replaced with 'oranges':\n\n\"I like oranges and ban..."
+        },
+        {
+          "task": "L2: Task 5 (Find and Replace)",
+          "prompt": "In the sentence 'test@example.com is a test email.', replace all instances of 'test' with 'prod'.",
+          "expected": "prod@example.com is a prod email.",
+          "got": "Here's the sentence with all instances of 'test' replaced by 'prod':\n\n'prod@example.com is a prod em..."
+        },
+        {
+          "task": "L2: Task 5 (Find and Replace)",
+          "prompt": "In the sentence 'File moved from /tmp/ to /var/.', replace all instances of '/' with '-'.",
+          "expected": "File moved from -tmp- to -var-.",
+          "got": "Here's the sentence with all instances of '/' replaced by '-':\n\nFile moved from -tmp- to -var-.ERROR..."
+        },
+        {
+          "task": "L2: Task 5 (Find and Replace)",
+          "prompt": "In the sentence 'Hello world, hello universe.', replace all instances of 'hello' with 'goodbye'.",
+          "expected": "Hello world, goodbye universe.",
+          "got": "Here's the sentence with all instances of 'hello' replaced with 'goodbye':\n\n'Goodbye world, goodbye ..."
+        }
+      ]
+    },
+    {
+      "agent_type": "tree-of-thought-agent",
+      "level": "L3",
+      "total_prompts": 25,
+      "successes": 10,
+      "failures": 15,
+      "success_rate_percent": 40.0,
+      "avg_time_per_prompt_seconds": 129.953,
+      "avg_cost_per_prompt_usd": 0.0,
+      "total_agent_cost_usd": 0.0,
+      "total_verification_cost_usd": 0.027591,
+      "total_cost_usd": 0.027591,
+      "failed_prompts": [
+        {
+          "task": "L3: Task 1 (Logic Grid Puzzle)",
+          "prompt": "3 people (Ann, Bob, Cal) have 3 pets (Cat, Dog, Fish). Clues: 1. Ann is allergic to cats. 2. Bob own...",
+          "expected": "Ann",
+          "got": "Let's approach this step-by-step:\n\n1. We have 3 people: Ann, Bob, and Cal\n2. We have 3 pets: Cat, Do..."
+        },
+        {
+          "task": "L3: Task 1 (Logic Grid Puzzle)",
+          "prompt": "3 employees (Leo, Max, Nina) have 3 jobs (Coder, Designer, Manager). Clues: 1. Leo cannot draw. 2. M...",
+          "expected": "Coder",
+          "got": "Let's approach this step-by-step:\n\n1. We have 3 employees: Leo, Max, and Nina\n2. We have 3 jobs: Cod..."
+        },
+        {
+          "task": "L3: Task 2 (Task Dependency Planning)",
+          "prompt": "Tasks: {A, B, C}. Dependencies: {A->C, B->C}. Give one valid execution order.",
+          "expected": "['A', 'B', 'C'] or ['B', 'A', 'C']",
+          "got": "A valid execution order for the given tasks and dependencies is:\n\nA, B, C\n\nThis order satisfies the ..."
+        },
+        {
+          "task": "L3: Task 2 (Task Dependency Planning)",
+          "prompt": "Tasks: {A, B, C}. Dependencies: {A->B, B->C, C->A}. What is the problem here?",
+          "expected": "Circular dependency detected",
+          "got": "The problem here is a circular dependency or a dependency cycle.\n\nLet's break it down:\n\n1. Task A de..."
+        },
+        {
+          "task": "L3: Task 3 (Data Restructuring)",
+          "prompt": "Restructure this flat list into a nested JSON object, grouping by \"category\": [{\"id\": 1, \"category\":...",
+          "expected": "{\"fruit\": [{\"id\": 1, \"name\": \"apple\"}, {\"id\": 3, \"name\": \"banana\"}], \"veg\": [{\"id\": 2, \"name\": \"carrot\"}]}",
+          "got": "Here's the restructured nested JSON object, grouped by \"category\":\n\n{\n  \"fruit\": [\n    {\n      \"id\":..."
+        },
+        {
+          "task": "L3: Task 3 (Data Restructuring)",
+          "prompt": "Convert this log string to a nested JSON object (list of actions): \"user=alice, action=view, item=1;...",
+          "expected": "[{\"user\": \"alice\", \"action\": \"view\", \"item\": \"1\"}, {\"user\": \"bob\", \"action\": \"buy\", \"item\": \"2\"}, {\"user\": \"alice\", \"action\": \"logout\"}]",
+          "got": "Here's the log string converted to a nested JSON object with a list of actions:\n\n{\n  \"actions\": [\n  ..."
+        },
+        {
+          "task": "L3: Task 3 (Data Restructuring)",
+          "prompt": "Take this list of edges [(\"A\", \"B\"), (\"A\", \"C\"), (\"B\", \"D\")] and represent it as a JSON adjacency li...",
+          "expected": "{\"A\": [\"B\", \"C\"], \"B\": [\"D\"]}",
+          "got": "Here's the JSON adjacency list representation of the given edge list:\n\n{\n  \"A\": [\"B\", \"C\"],\n  \"B\": [..."
+        },
+        {
+          "task": "L3: Task 3 (Data Restructuring)",
+          "prompt": "Summarize this list into a JSON object with counts for each fruit: [\"apple\", \"banana\", \"apple\", \"ora...",
+          "expected": "{\"apple\": 3, \"banana\": 2, \"orange\": 1}",
+          "got": "Here's the JSON object summarizing the list with counts for each fruit:\n\n{\n  \"apple\": 3,\n  \"banana\":..."
+        },
+        {
+          "task": "L3: Task 3 (Data Restructuring)",
+          "prompt": "Restructure this JSON {\"user_1\": \"Alice\", \"user_2\": \"Bob\", \"item_1\": \"Book\"} into a new JSON with \"u...",
+          "expected": "{\"users\": [{\"id\": 1, \"name\": \"Alice\"}, {\"id\": 2, \"name\": \"Bob\"}], \"items\": [{\"id\": 1, \"name\": \"Book\"}]}",
+          "got": "Here's the restructured JSON with \"users\" and \"items\" keys:\n\n{\n  \"users\": [\n    {\n      \"id\": 1,\n   ..."
+        },
+        {
+          "task": "L3: Task 4 (Simple Algorithm (Coding))",
+          "prompt": "Write a Python function `group_by_parity(numbers)`. What is the result of `group_by_parity([1, 2, 3]...",
+          "expected": "{'even': [2], 'odd': [1, 3]}",
+          "got": "Here's a Python function `group_by_parity(numbers)` that groups numbers by their parity (odd or even..."
+        },
+        {
+          "task": "L3: Task 4 (Simple Algorithm (Coding))",
+          "prompt": "Write a Python function `is_valid_email(email_str)`. What is the result of `is_valid_email('test@me....",
+          "expected": "True",
+          "got": "Here's a Python function that performs a simplified check for email validity:\n\n```python\ndef is_vali..."
+        },
+        {
+          "task": "L3: Task 4 (Simple Algorithm (Coding))",
+          "prompt": "Write a Python function `fibonacci(n)`. What is the result of `fibonacci(7)`? (starting with 0, 1)",
+          "expected": "13",
+          "got": "Here's a Python function to calculate the nth Fibonacci number:\n\n```python\ndef fibonacci(n):\n    if ..."
+        },
+        {
+          "task": "L3: Task 5 (Knights & Knaves)",
+          "prompt": "You meet two people, A and B. A says, \"B is a Knave.\" B says, \"A is a Knave.\" What are A and B?",
+          "expected": "A is a Knave, B is a Knight.",
+          "got": "Let's approach this step-by-step using logic:\n\n1) In this type of puzzle, we assume that each person..."
+        },
+        {
+          "task": "L3: Task 5 (Knights & Knaves)",
+          "prompt": "You meet two people, A and B. A says, \"I am a Knave, or B is a Knight.\" What are A and B?",
+          "expected": "A is a Knight, B is a Knight.",
+          "got": "Let's approach this logically:\n\n1) We know that in this type of puzzle, each person is either a Knig..."
+        },
+        {
+          "task": "L3: Task 5 (Knights & Knaves)",
+          "prompt": "You meet three people, A, B, and C. A says, \"B is a Knave.\" B says, \"C is a Knave.\" C says, \"They ar...",
+          "expected": "A is a Knight, B is a Knave, C is a Knight.",
+          "got": "Let's approach this step-by-step using logic. In this type of puzzle, there are typically two types ..."
+        }
+      ]
+    },
+    {
+      "agent_type": "standard-agent",
+      "level": "L1",
+      "total_prompts": 25,
+      "successes": 14,
+      "failures": 11,
+      "success_rate_percent": 56.0,
+      "avg_time_per_prompt_seconds": 3.848,
+      "avg_cost_per_prompt_usd": 0.0,
+      "total_agent_cost_usd": 0.0,
+      "total_verification_cost_usd": 0.018528,
+      "total_cost_usd": 0.018528,
+      "failed_prompts": [
+        {
+          "task": "L1: Task 2 (String Reversal)",
+          "prompt": "Reverse this string: 'dxzayi'",
+          "expected": "iyazxd",
+          "got": "lowTo reverse the string 'dxzayi', you simply need to read the string from the end to the beginning...."
+        },
+        {
+          "task": "L1: Task 2 (String Reversal)",
+          "prompt": "Reverse this string: 'golmrjf'",
+          "expected": "fjrmlog",
+          "got": "lowTo reverse the string 'golmrjf', you can follow these steps:\n\n1. Identify the string you want to ..."
+        },
+        {
+          "task": "L1: Task 2 (String Reversal)",
+          "prompt": "Reverse this string: 'csrdq'",
+          "expected": "qdrsc",
+          "got": "lowTo reverse the string 'csrdq', you simply need to read it from the end to the beginning. Here is ..."
+        },
+        {
+          "task": "L1: Task 4 (Palindrome Check)",
+          "prompt": "Is the word 'test' a palindrome?",
+          "expected": "False",
+          "got": "lowTo determine if the word 'test' is a palindrome, we need to check if it reads the same forwards a..."
+        },
+        {
+          "task": "L1: Task 4 (Palindrome Check)",
+          "prompt": "Is the word 'racecar' a palindrome?",
+          "expected": "True",
+          "got": "lowYes, the word 'racecar' is a palindrome. A palindrome is a word that reads the same backward as f..."
+        },
+        {
+          "task": "L1: Task 4 (Palindrome Check)",
+          "prompt": "Is the word 'python' a palindrome?",
+          "expected": "False",
+          "got": "lowTo determine if the word \"python\" is a palindrome, we need to check if it reads the same forwards..."
+        },
+        {
+          "task": "L1: Task 4 (Palindrome Check)",
+          "prompt": "Is the word 'level' a palindrome?",
+          "expected": "True",
+          "got": "lowTo determine if the word 'level' is a palindrome, we need to check if it reads the same forwards ..."
+        },
+        {
+          "task": "L1: Task 5 (Count Vowels)",
+          "prompt": "How many vowels are in the word 'apple'?",
+          "expected": "2",
+          "got": "lowThe word 'apple' contains two vowels: 'a' and 'e'.ERROR: object of type 'AgentResult' has no len(..."
+        },
+        {
+          "task": "L1: Task 5 (Count Vowels)",
+          "prompt": "How many vowels are in the word 'rhythm'?",
+          "expected": "0",
+          "got": "lowThe word 'rhythm' contains only one vowel, which is the letter 'y'. In this context, 'y' is funct..."
+        },
+        {
+          "task": "L1: Task 5 (Count Vowels)",
+          "prompt": "How many vowels are in the word 'banana'?",
+          "expected": "3",
+          "got": "lowThe word 'banana' contains four vowels: a, a, a, and a. Each 'a' in the word is a vowel.ERROR: ob..."
+        },
+        {
+          "task": "L1: Task 5 (Count Vowels)",
+          "prompt": "How many vowels are in the word 'sky'?",
+          "expected": "0",
+          "got": "lowThe word 'sky' contains one vowel, which is the letter 'y'. In English, the letter 'y' can someti..."
+        }
+      ]
+    },
+    {
+      "agent_type": "standard-agent",
+      "level": "L2",
+      "total_prompts": 25,
+      "successes": 7,
+      "failures": 18,
+      "success_rate_percent": 28.0,
+      "avg_time_per_prompt_seconds": 3.366,
+      "avg_cost_per_prompt_usd": 0.0,
+      "total_agent_cost_usd": 0.0,
+      "total_verification_cost_usd": 0.021465,
+      "total_cost_usd": 0.021465,
+      "failed_prompts": [
+        {
+          "task": "L2: Task 1 (Fill-in-the-Blank Math)",
+          "prompt": "Fill in the missing numbers ( _, _ ): _ * 4 - _ / 3 = 5",
+          "expected": "(3, 9)",
+          "got": "mediumTo solve this problem, we need to find the missing numbers that make the equation true.\n\nGiven..."
+        },
+        {
+          "task": "L2: Task 1 (Fill-in-the-Blank Math)",
+          "prompt": "Fill in the missing numbers ( _, _ ): _ + 2 * _ - 5 = 15",
+          "expected": "(10, 5)",
+          "got": "mediumTo solve this equation, we need to follow the order of operations, which is PEMDAS (Parenthese..."
+        },
+        {
+          "task": "L2: Task 1 (Fill-in-the-Blank Math)",
+          "prompt": "Fill in the missing numbers ( _, _ ): (100 - _) / _ + 1 = 11",
+          "expected": "(50, 5)",
+          "got": "mediumTo solve this equation, we need to find the missing numbers that satisfy the equation.\n\nGiven ..."
+        },
+        {
+          "task": "L2: Task 1 (Fill-in-the-Blank Math)",
+          "prompt": "Fill in the missing numbers ( _, _ ): _ * _ + 4 = 20",
+          "expected": "(4, 4)",
+          "got": "mediumTo find the missing numbers in the given expression, we need to solve for the unknown values.\n..."
+        },
+        {
+          "task": "L2: Task 1 (Fill-in-the-Blank Math)",
+          "prompt": "Fill in the missing numbers ( _, _ ): 8 / _ + 9 * _ = 30",
+          "expected": "(2, 3)",
+          "got": "mediumTo solve for the missing numbers, we need to use the order of operations (PEMDAS: Parentheses,..."
+        },
+        {
+          "task": "L2: Task 3 (JSON Field Extraction)",
+          "prompt": "From this text: \"User Alice (id: 123) is active. Email: alice@web.com.\" Extract the user's name and ...",
+          "expected": "{\"name\": \"Alice\", \"email\": \"alice@web.com\"}",
+          "got": "mediumHere's the JSON object with the extracted user's name and email:\n\n{\n  \"name\": \"Alice\",\n  \"emai..."
+        },
+        {
+          "task": "L2: Task 3 (JSON Field Extraction)",
+          "prompt": "From this text: \"Product: Laptop, SKU: L-456, Price: 999, InStock: true.\" Extract the SKU and Price ...",
+          "expected": "{\"SKU\": \"L-456\", \"Price\": 999}",
+          "got": "mediumHere's the JSON object with the extracted SKU and Price:\n\n{\n  \"SKU\": \"L-456\",\n  \"Price\": 999\n}..."
+        },
+        {
+          "task": "L2: Task 3 (JSON Field Extraction)",
+          "prompt": "From this text: \"Log: { \"timestamp\": \"2025-01-01\", \"level\": \"ERROR\", \"message\": \"Failed login\" }.\" E...",
+          "expected": "{\"level\": \"ERROR\", \"message\": \"Failed login\"}",
+          "got": "mediumHere is the JSON object containing the level and message extracted from the given text:\n\n{\n  \"..."
+        },
+        {
+          "task": "L2: Task 3 (JSON Field Extraction)",
+          "prompt": "From this text: \"Meet Bob (bob@work.com), his manager is Carol (carol@work.com).\" Extract all names ...",
+          "expected": "{\"Bob\": \"bob@work.com\", \"Carol\": \"carol@work.com\"}",
+          "got": "mediumHere is the JSON object with the extracted names and emails:\n\n{\n  \"names\": [\n    \"Bob\",\n    \"C..."
+        },
+        {
+          "task": "L2: Task 3 (JSON Field Extraction)",
+          "prompt": "From this text: \"ID: 9, Name: Stapler, Color: Red\" Extract the ID (as a number) and Color into a JSO...",
+          "expected": "{\"ID\": 9, \"Color\": \"Red\"}",
+          "got": "mediumHere is the JSON object with the extracted ID (as a number) and Color:\n\n{\n  \"ID\": 9,\n  \"Color\"..."
+        },
+        {
+          "task": "L2: Task 4 (Instruction Ordering)",
+          "prompt": "Put these steps in the correct order: ['Boil water', 'Add tea bag', 'Get cup', 'Pour water']",
+          "expected": "['Get cup', 'Add tea bag', 'Boil water', 'Pour water']",
+          "got": "mediumThe correct order of the steps is:\n\n1. Get cup\n2. Boil water\n3. Pour water\n4. Add tea bagERROR..."
+        },
+        {
+          "task": "L2: Task 4 (Instruction Ordering)",
+          "prompt": "Put these steps in the correct order: ['Boil water', 'Get cup', 'Pour water', 'Add tea bag']",
+          "expected": "['Get cup', 'Add tea bag', 'Boil water', 'Pour water']",
+          "got": "mediumThe correct order of the steps is:\n\n1. Get cup\n2. Boil water\n3. Pour water\n4. Add tea bagERROR..."
+        },
+        {
+          "task": "L2: Task 4 (Instruction Ordering)",
+          "prompt": "Put these steps in the correct order: ['Add tea bag', 'Pour water', 'Boil water', 'Get cup']",
+          "expected": "['Get cup', 'Add tea bag', 'Boil water', 'Pour water']",
+          "got": "mediumThe correct order of the steps is:\n\n1. Boil water\n2. Get cup\n3. Pour water\n4. Add tea bagERROR..."
+        },
+        {
+          "task": "L2: Task 4 (Instruction Ordering)",
+          "prompt": "Put these steps in the correct order: ['Boil water', 'Add tea bag', 'Pour water', 'Get cup']",
+          "expected": "['Get cup', 'Add tea bag', 'Boil water', 'Pour water']",
+          "got": "mediumHere are the steps in the correct order:\n\n1. Get cup\n2. Boil water\n3. Pour water\n4. Add tea ba..."
+        },
+        {
+          "task": "L2: Task 4 (Instruction Ordering)",
+          "prompt": "Put these steps in the correct order: ['Pour water', 'Add tea bag', 'Boil water', 'Get cup']",
+          "expected": "['Get cup', 'Add tea bag', 'Boil water', 'Pour water']",
+          "got": "mediumThe correct order of the steps is:\n\n1. Get cup\n2. Boil water\n3. Pour water\n4. Add tea bagERROR..."
+        },
+        {
+          "task": "L2: Task 5 (Find and Replace)",
+          "prompt": "In the sentence 'I like apples and bananas. Apples are great.', replace all instances of 'apples' wi...",
+          "expected": "I like oranges and bananas. Apples are great.",
+          "got": "lowTo replace all instances of 'apples' with 'oranges' in the given sentence, follow these steps:\n\n1..."
+        },
+        {
+          "task": "L2: Task 5 (Find and Replace)",
+          "prompt": "In the sentence 'test@example.com is a test email.', replace all instances of 'test' with 'prod'.",
+          "expected": "prod@example.com is a prod email.",
+          "got": "mediumIn the sentence 'test@example.com is a prod email.', all instances of 'test' have been replace..."
+        },
+        {
+          "task": "L2: Task 5 (Find and Replace)",
+          "prompt": "In the sentence 'Hello world, hello universe.', replace all instances of 'hello' with 'goodbye'.",
+          "expected": "Hello world, goodbye universe.",
+          "got": "mediumIn the sentence 'Goodbye world, goodbye universe.', all instances of 'hello' have been replace..."
+        }
+      ]
+    },
+    {
+      "agent_type": "standard-agent",
+      "level": "L3",
+      "total_prompts": 25,
+      "successes": 6,
+      "failures": 19,
+      "success_rate_percent": 24.0,
+      "avg_time_per_prompt_seconds": 4.711,
+      "avg_cost_per_prompt_usd": 0.0,
+      "total_agent_cost_usd": 0.0,
+      "total_verification_cost_usd": 0.028185,
+      "total_cost_usd": 0.028185,
+      "failed_prompts": [
+        {
+          "task": "L3: Task 1 (Logic Grid Puzzle)",
+          "prompt": "3 people (Ann, Bob, Cal) have 3 pets (Cat, Dog, Fish). Clues: 1. Ann is allergic to cats. 2. Bob own...",
+          "expected": "Ann",
+          "got": "mediumTo solve this problem, we need to use the given clues to determine who has the Fish.\n\nGiven in..."
+        },
+        {
+          "task": "L3: Task 1 (Logic Grid Puzzle)",
+          "prompt": "3 friends (Dan, Eva, Fay) live in 3 cities (London, Paris, Tokyo). Clues: 1. Dan has never been to A...",
+          "expected": "Tokyo",
+          "got": "mediumTo solve this problem, we need to use the given clues to determine where Fay lives.\n\nGiven inf..."
+        },
+        {
+          "task": "L3: Task 1 (Logic Grid Puzzle)",
+          "prompt": "3 projects (X, Y, Z) are written in 3 languages (Python, Java, Rust). Clues: 1. Project X is not Jav...",
+          "expected": "Python",
+          "got": "mediumTo solve this problem, we can use the given clues to determine the language used for each proj..."
+        },
+        {
+          "task": "L3: Task 1 (Logic Grid Puzzle)",
+          "prompt": "3 employees (Leo, Max, Nina) have 3 jobs (Coder, Designer, Manager). Clues: 1. Leo cannot draw. 2. M...",
+          "expected": "Coder",
+          "got": "mediumTo solve this problem, we need to use the given clues to determine the job assignments for eac..."
+        },
+        {
+          "task": "L3: Task 1 (Logic Grid Puzzle)",
+          "prompt": "3 cars (A, B, C) are 3 colors (Red, Green, Blue). Clues: 1. Car A is Red. 2. Car B is not Green. Wha...",
+          "expected": "Green",
+          "got": "mediumTo solve this problem, we can use the given clues to deduce the color of Car C.\n\nGiven informa..."
+        },
+        {
+          "task": "L3: Task 2 (Task Dependency Planning)",
+          "prompt": "Tasks: {A, B, C, D, E}. Dependencies: {A->B, B->C, D->E}. Give one valid execution order.",
+          "expected": "['A', 'B', 'C', 'D', 'E'] or ['D', 'E', 'A', 'B', 'C']",
+          "got": "mediumGiven the tasks and dependencies, one valid execution order would be:\n\n1. A\n2. B\n3. C\n4. D\n5. ..."
+        },
+        {
+          "task": "L3: Task 2 (Task Dependency Planning)",
+          "prompt": "Tasks: {A, B, C}. Dependencies: {A->B, B->C, C->A}. What is the problem here?",
+          "expected": "Circular dependency detected",
+          "got": "mediumThe problem in the given scenario is that the tasks have circular dependencies, which means th..."
+        },
+        {
+          "task": "L3: Task 3 (Data Restructuring)",
+          "prompt": "Restructure this flat list into a nested JSON object, grouping by \"category\": [{\"id\": 1, \"category\":...",
+          "expected": "{\"fruit\": [{\"id\": 1, \"name\": \"apple\"}, {\"id\": 3, \"name\": \"banana\"}], \"veg\": [{\"id\": 2, \"name\": \"carrot\"}]}",
+          "got": "mediumHere's the restructured nested JSON object, grouped by \"category\":\n\n{\n  \"fruit\": [\n    {\n     ..."
+        },
+        {
+          "task": "L3: Task 3 (Data Restructuring)",
+          "prompt": "Convert this log string to a nested JSON object (list of actions): \"user=alice, action=view, item=1;...",
+          "expected": "[{\"user\": \"alice\", \"action\": \"view\", \"item\": \"1\"}, {\"user\": \"bob\", \"action\": \"buy\", \"item\": \"2\"}, {\"user\": \"alice\", \"action\": \"logout\"}]",
+          "got": "mediumHere is the nested JSON object representation of the given log string:\n\n```json\n[\n  {\n    \"use..."
+        },
+        {
+          "task": "L3: Task 3 (Data Restructuring)",
+          "prompt": "Take this list of edges [(\"A\", \"B\"), (\"A\", \"C\"), (\"B\", \"D\")] and represent it as a JSON adjacency li...",
+          "expected": "{\"A\": [\"B\", \"C\"], \"B\": [\"D\"]}",
+          "got": "mediumHere's the representation of the given list of edges as a JSON adjacency list:\n\n{\n  \"A\": [\"B\",..."
+        },
+        {
+          "task": "L3: Task 3 (Data Restructuring)",
+          "prompt": "Summarize this list into a JSON object with counts for each fruit: [\"apple\", \"banana\", \"apple\", \"ora...",
+          "expected": "{\"apple\": 3, \"banana\": 2, \"orange\": 1}",
+          "got": "mediumHere's the JSON object with the counts for each fruit:\n\n{\n  \"apple\": 3,\n  \"banana\": 2,\n  \"oran..."
+        },
+        {
+          "task": "L3: Task 3 (Data Restructuring)",
+          "prompt": "Restructure this JSON {\"user_1\": \"Alice\", \"user_2\": \"Bob\", \"item_1\": \"Book\"} into a new JSON with \"u...",
+          "expected": "{\"users\": [{\"id\": 1, \"name\": \"Alice\"}, {\"id\": 2, \"name\": \"Bob\"}], \"items\": [{\"id\": 1, \"name\": \"Book\"}]}",
+          "got": "mediumHere's the restructured JSON:\n\n{\n  \"users\": [\n    \"Alice\",\n    \"Bob\"\n  ],\n  \"items\": [\n    \"Bo..."
+        },
+        {
+          "task": "L3: Task 4 (Simple Algorithm (Coding))",
+          "prompt": "Write a Python function `find_common(list1, list2)`. What is the result of `find_common([1, 2, 3], [...",
+          "expected": "[3]",
+          "got": "mediumHere's a Python function `find_common(list1, list2)` that takes two lists as input and returns..."
+        },
+        {
+          "task": "L3: Task 4 (Simple Algorithm (Coding))",
+          "prompt": "Write a Python function `group_by_parity(numbers)`. What is the result of `group_by_parity([1, 2, 3]...",
+          "expected": "{'even': [2], 'odd': [1, 3]}",
+          "got": "mediumHere's the Python function `group_by_parity()` that takes a list of numbers and returns a dict..."
+        },
+        {
+          "task": "L3: Task 4 (Simple Algorithm (Coding))",
+          "prompt": "Write a Python function `is_valid_email(email_str)`. What is the result of `is_valid_email('test@me....",
+          "expected": "True",
+          "got": "mediumHere's a simple Python function that checks if an email string is valid based on the condition..."
+        },
+        {
+          "task": "L3: Task 5 (Knights & Knaves)",
+          "prompt": "You meet two people, A and B. A says, \"B is a Knave.\" B says, \"A is a Knave.\" What are A and B?",
+          "expected": "A is a Knave, B is a Knight.",
+          "got": "highLet's approach this step-by-step using logic:\n\n1) In this type of puzzle, there are typically tw..."
+        },
+        {
+          "task": "L3: Task 5 (Knights & Knaves)",
+          "prompt": "You meet two people, A and B. A says, \"We are both Knights.\" B says, \"A is lying.\" What are A and B?",
+          "expected": "A is a Knave, B is a Knight.",
+          "got": "mediumThis is a classic logic puzzle known as the \"Knights and Knaves\" problem. In this scenario, we..."
+        },
+        {
+          "task": "L3: Task 5 (Knights & Knaves)",
+          "prompt": "You meet two people, A and B. A says, \"I am a Knave, or B is a Knight.\" What are A and B?",
+          "expected": "A is a Knight, B is a Knight.",
+          "got": "mediumIn this logic puzzle, A makes a statement about their own identity and B's identity. The key t..."
+        },
+        {
+          "task": "L3: Task 5 (Knights & Knaves)",
+          "prompt": "You meet three people, A, B, and C. A says, \"B is a Knave.\" B says, \"C is a Knave.\" C says, \"They ar...",
+          "expected": "A is a Knight, B is a Knave, C is a Knight.",
+          "got": "highLet's approach this step-by-step using logic. Remember, in this type of puzzle, Knights always t..."
+        }
+      ]
+    },
+    {
+      "agent_type": "task-decomposition-tree",
+      "level": "L1",
+      "total_prompts": 25,
+      "successes": 16,
+      "failures": 9,
+      "success_rate_percent": 64.0,
+      "avg_time_per_prompt_seconds": 2.723,
+      "avg_cost_per_prompt_usd": 0.000131,
+      "total_agent_cost_usd": 0.003277,
+      "total_verification_cost_usd": 0.014082,
+      "total_cost_usd": 0.017359,
+      "failed_prompts": [
+        {
+          "task": "L1: Task 2 (String Reversal)",
+          "prompt": "Reverse this string: 'dxzayi'",
+          "expected": "iyazxd",
+          "got": "YES\u251c\u2500 root: Reverse this string: 'dxzayi' [LEAF] [verified]\nThe reversed string is: 'iyzaxd'The reve..."
+        },
+        {
+          "task": "L1: Task 2 (String Reversal)",
+          "prompt": "Reverse this string: 'golmrjf'",
+          "expected": "fjrmlog",
+          "got": "YES\u251c\u2500 root: Reverse this string: 'golmrjf' [LEAF] [verified]\nThe reversed string is: 'fjrmolg'The re..."
+        },
+        {
+          "task": "L1: Task 2 (String Reversal)",
+          "prompt": "Reverse this string: 'viohml'",
+          "expected": "lmhoiv",
+          "got": "YES\u251c\u2500 root: Reverse this string: 'viohml' [LEAF] [verified]\nThe reversed string is: 'lmhovi'The reve..."
+        },
+        {
+          "task": "L1: Task 2 (String Reversal)",
+          "prompt": "Reverse this string: 'csrdq'",
+          "expected": "qdrsc",
+          "got": "YES\u251c\u2500 root: Reverse this string: 'csrdq' [LEAF] [verified]\nThe reversed string is: 'qdsrc'The revers..."
+        },
+        {
+          "task": "L1: Task 4 (Palindrome Check)",
+          "prompt": "Is the word 'test' a palindrome?",
+          "expected": "False",
+          "got": "YES\u251c\u2500 root: Is the word 'test' a palindrome? [LEAF] [verified]\nNo, the word 'test' is not a palindro..."
+        },
+        {
+          "task": "L1: Task 4 (Palindrome Check)",
+          "prompt": "Is the word 'python' a palindrome?",
+          "expected": "False",
+          "got": "YES\u251c\u2500 root: Is the word 'python' a palindrome? [LEAF] [verified]\nNo, the word 'python' is not a pali..."
+        },
+        {
+          "task": "L1: Task 5 (Count Vowels)",
+          "prompt": "How many vowels are in the word 'rhythm'?",
+          "expected": "0",
+          "got": "YES\u251c\u2500 root: How many vowels are in the word 'rhythm'? [LEAF] [verified]\nThere is 1 vowel in the word..."
+        },
+        {
+          "task": "L1: Task 5 (Count Vowels)",
+          "prompt": "How many vowels are in the word 'sky'?",
+          "expected": "0",
+          "got": "YES\u251c\u2500 root: How many vowels are in the word 'sky'? [LEAF] [verified]\nThere is 1 vowel in the word 's..."
+        },
+        {
+          "task": "L1: Task 5 (Count Vowels)",
+          "prompt": "How many vowels are in the word 'strength'?",
+          "expected": "1",
+          "got": "YES\u251c\u2500 root: How many vowels are in the word 'strength'? [LEAF] [verified]\nThere are 2 vowels in the ..."
+        }
+      ]
+    },
+    {
+      "agent_type": "task-decomposition-tree",
+      "level": "L2",
+      "total_prompts": 25,
+      "successes": 17,
+      "failures": 8,
+      "success_rate_percent": 68.0,
+      "avg_time_per_prompt_seconds": 11.638,
+      "avg_cost_per_prompt_usd": 0.001541,
+      "total_agent_cost_usd": 0.038513,
+      "total_verification_cost_usd": 0.051456,
+      "total_cost_usd": 0.089969,
+      "failed_prompts": [
+        {
+          "task": "L2: Task 1 (Fill-in-the-Blank Math)",
+          "prompt": "Fill in the missing numbers ( _, _ ): _ * 4 - _ / 3 = 5",
+          "expected": "(3, 9)",
+          "got": "YES\u251c\u2500 root: Fill in the missing numbers ( _, _ ): _ * 4 - _ / 3 = 5 [LEAF] [verified]\nTo solve the e..."
+        },
+        {
+          "task": "L2: Task 1 (Fill-in-the-Blank Math)",
+          "prompt": "Fill in the missing numbers ( _, _ ): (100 - _) / _ + 1 = 11",
+          "expected": "(50, 5)",
+          "got": "YES\u251c\u2500 root: Fill in the missing numbers ( _, _ ): (100 - _) / _ + 1 = 11 [LEAF] [verified]\nTo solve ..."
+        },
+        {
+          "task": "L2: Task 2 (Sort List)",
+          "prompt": "Sort this list in descending order: [56, 12, 75, 6, 20, 87, 61]",
+          "expected": "[87, 75, 61, 56, 20, 12, 6]",
+          "got": "YES\u251c\u2500 root: Sort this list in descending order: [56, 12, 75, 6, 20, 87,  [LEAF] [verified]\nHere is t..."
+        },
+        {
+          "task": "L2: Task 5 (Find and Replace)",
+          "prompt": "In the sentence 'The red car and the red boat.', replace all instances of 'red' with 'blue'.",
+          "expected": "The blue car and the blue boat.",
+          "got": "YES\u251c\u2500 root: In the sentence 'The red car and the red boat.', replace all [LEAF] [verified]\nThe blue ..."
+        },
+        {
+          "task": "L2: Task 5 (Find and Replace)",
+          "prompt": "In the sentence 'I like apples and bananas. Apples are great.', replace all instances of 'apples' wi...",
+          "expected": "I like oranges and bananas. Apples are great.",
+          "got": "YES\u251c\u2500 root: In the sentence 'I like apples and bananas. Apples are great [LEAF] [verified]\nThe sente..."
+        },
+        {
+          "task": "L2: Task 5 (Find and Replace)",
+          "prompt": "In the sentence 'test@example.com is a test email.', replace all instances of 'test' with 'prod'.",
+          "expected": "prod@example.com is a prod email.",
+          "got": "YES\u251c\u2500 root: In the sentence 'test@example.com is a test email.', replace [LEAF] [verified]\n'prod@exa..."
+        },
+        {
+          "task": "L2: Task 5 (Find and Replace)",
+          "prompt": "In the sentence 'File moved from /tmp/ to /var/.', replace all instances of '/' with '-'.",
+          "expected": "File moved from -tmp- to -var-.",
+          "got": "YES\u251c\u2500 root: In the sentence 'File moved from /tmp/ to /var/.', replace a [LEAF] [verified]\nFile move..."
+        },
+        {
+          "task": "L2: Task 5 (Find and Replace)",
+          "prompt": "In the sentence 'Hello world, hello universe.', replace all instances of 'hello' with 'goodbye'.",
+          "expected": "Hello world, goodbye universe.",
+          "got": "YES\u251c\u2500 root: In the sentence 'Hello world, hello universe.', replace all  [LEAF] [verified]\nThe sente..."
+        }
+      ]
+    },
+    {
+      "agent_type": "task-decomposition-tree",
+      "level": "L3",
+      "total_prompts": 25,
+      "successes": 10,
+      "failures": 15,
+      "success_rate_percent": 40.0,
+      "avg_time_per_prompt_seconds": 21.834,
+      "avg_cost_per_prompt_usd": 0.003395,
+      "total_agent_cost_usd": 0.084863,
+      "total_verification_cost_usd": 0.100977,
+      "total_cost_usd": 0.185841,
+      "failed_prompts": [
+        {
+          "task": "L3: Task 1 (Logic Grid Puzzle)",
+          "prompt": "3 projects (X, Y, Z) are written in 3 languages (Python, Java, Rust). Clues: 1. Project X is not Jav...",
+          "expected": "Python",
+          "got": "NO[\"Determine the language used for Project X\", \"Determine the language used for Project Z\"]YESYESYE..."
+        },
+        {
+          "task": "L3: Task 1 (Logic Grid Puzzle)",
+          "prompt": "3 cars (A, B, C) are 3 colors (Red, Green, Blue). Clues: 1. Car A is Red. 2. Car B is not Green. Wha...",
+          "expected": "Green",
+          "got": "YES\u251c\u2500 root: 3 cars (A, B, C) are 3 colors (Red, Green, Blue). Clues: 1.  [LEAF] [verified]\nBased on ..."
+        },
+        {
+          "task": "L3: Task 2 (Task Dependency Planning)",
+          "prompt": "Tasks: {A, B, C, D}. Dependencies: {A->B, A->C, B->D, C->D}. Give one valid execution order.",
+          "expected": "['A', 'B', 'C', 'D'] or ['A', 'C', 'B', 'D']",
+          "got": "NO[\"Execute task A\", \"Execute task B\", \"Execute task C\", \"Execute task D\"]YESYESYESYESYES\u251c\u2500 root: Ta..."
+        },
+        {
+          "task": "L3: Task 2 (Task Dependency Planning)",
+          "prompt": "Tasks: {A, B, C}. Dependencies: {A->C, B->C}. Give one valid execution order.",
+          "expected": "['A', 'B', 'C'] or ['B', 'A', 'C']",
+          "got": "NO[\n  \"Execute task A\",\n  \"Execute task B\",\n  \"Execute task C\"\n]YESYESYESYES\u251c\u2500 root: Tasks: {A, B, C..."
+        },
+        {
+          "task": "L3: Task 2 (Task Dependency Planning)",
+          "prompt": "Tasks: {A, B, C}. Dependencies: {A->B, B->C, C->A}. What is the problem here?",
+          "expected": "Circular dependency detected",
+          "got": "",
+          "error": "Timeout"
+        },
+        {
+          "task": "L3: Task 3 (Data Restructuring)",
+          "prompt": "Restructure this flat list into a nested JSON object, grouping by \"category\": [{\"id\": 1, \"category\":...",
+          "expected": "{\"fruit\": [{\"id\": 1, \"name\": \"apple\"}, {\"id\": 3, \"name\": \"banana\"}], \"veg\": [{\"id\": 2, \"name\": \"carrot\"}]}",
+          "got": "NO[\n  \"Identify the unique categories in the flat list\",\n  \"Group the items in the flat list by thei..."
+        },
+        {
+          "task": "L3: Task 3 (Data Restructuring)",
+          "prompt": "Convert this log string to a nested JSON object (list of actions): \"user=alice, action=view, item=1;...",
+          "expected": "[{\"user\": \"alice\", \"action\": \"view\", \"item\": \"1\"}, {\"user\": \"bob\", \"action\": \"buy\", \"item\": \"2\"}, {\"user\": \"alice\", \"action\": \"logout\"}]",
+          "got": "NO[\"Parse the log string into individual actions\",\n            \"Convert each individual action into ..."
+        },
+        {
+          "task": "L3: Task 3 (Data Restructuring)",
+          "prompt": "Summarize this list into a JSON object with counts for each fruit: [\"apple\", \"banana\", \"apple\", \"ora...",
+          "expected": "{\"apple\": 3, \"banana\": 2, \"orange\": 1}",
+          "got": "YES\u251c\u2500 root: Summarize this list into a JSON object with counts for each  [LEAF] [verified]\n```json\n{..."
+        },
+        {
+          "task": "L3: Task 3 (Data Restructuring)",
+          "prompt": "Restructure this JSON {\"user_1\": \"Alice\", \"user_2\": \"Bob\", \"item_1\": \"Book\"} into a new JSON with \"u...",
+          "expected": "{\"users\": [{\"id\": 1, \"name\": \"Alice\"}, {\"id\": 2, \"name\": \"Bob\"}], \"items\": [{\"id\": 1, \"name\": \"Book\"}]}",
+          "got": "YES\u251c\u2500 root: Restructure this JSON {\"user_1\": \"Alice\", \"user_2\": \"Bob\", \" [LEAF] [verified]\n```json\n{..."
+        },
+        {
+          "task": "L3: Task 4 (Simple Algorithm (Coding))",
+          "prompt": "Write a Python function `is_valid_email(email_str)`. What is the result of `is_valid_email('test@me....",
+          "expected": "True",
+          "got": "YES\u251c\u2500 root: Write a Python function `is_valid_email(email_str)`. What is [LEAF] [verified]\nHere is t..."
+        },
+        {
+          "task": "L3: Task 4 (Simple Algorithm (Coding))",
+          "prompt": "Write a Python function `word_count(sentence)`. What is the result of `word_count('a b a')`?",
+          "expected": "{'a': 2, 'b': 1}",
+          "got": "YES\u251c\u2500 root: Write a Python function `word_count(sentence)`. What is the  [LEAF] [verified]\nHere is t..."
+        },
+        {
+          "task": "L3: Task 5 (Knights & Knaves)",
+          "prompt": "You meet two people, A and B. A says, \"B is a Knave.\" B says, \"A is a Knave.\" What are A and B?",
+          "expected": "A is a Knave, B is a Knight.",
+          "got": "NO[\"Determine the possible identities of A and B based on their statements\",\n\"Analyze the logical im..."
+        },
+        {
+          "task": "L3: Task 5 (Knights & Knaves)",
+          "prompt": "You meet two people, A and B. A says, \"We are both Knights.\" B says, \"A is lying.\" What are A and B?",
+          "expected": "A is a Knave, B is a Knight.",
+          "got": "",
+          "error": "Timeout"
+        },
+        {
+          "task": "L3: Task 5 (Knights & Knaves)",
+          "prompt": "You meet two people, A and B. A says, \"I am a Knave, or B is a Knight.\" What are A and B?",
+          "expected": "A is a Knight, B is a Knight.",
+          "got": "",
+          "error": "Timeout"
+        },
+        {
+          "task": "L3: Task 5 (Knights & Knaves)",
+          "prompt": "You meet three people, A, B, and C. A says, \"B is a Knave.\" B says, \"C is a Knave.\" C says, \"They ar...",
+          "expected": "A is a Knight, B is a Knave, C is a Knight.",
+          "got": "",
+          "error": "Timeout"
+        }
+      ]
+    }
+  ]
+}

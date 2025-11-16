@@ -212,7 +212,7 @@ Examples:
             # Close the banner for the logs
             print("-"*30 + "\n\n")
 
-            print(f"Agent: {agent_response}\n")
+            print(f"\n\n\nAgent: {agent_response}\n")
 
 
         except KeyboardInterrupt:

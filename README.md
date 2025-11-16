@@ -183,17 +183,17 @@ For each agent at each level, we measure:
 
 | Agent | Level | Success Rate | Avg Time (s) | Avg Cost (USD) |
 |-------|-------|--------------|--------------|----------------|
-| **Task Decomposition Tree** | L1 | *Evaluating...* | *Evaluating...* | *Evaluating...* |
-| | L2 | *Evaluating...* | *Evaluating...* | *Evaluating...* |
-| | L3 | *Evaluating...* | *Evaluating...* | *Evaluating...* |
-| **Tree-of-Thought** | L1 | *Evaluating...* | *Evaluating...* | *Evaluating...* |
-| | L2 | *Evaluating...* | *Evaluating...* | *Evaluating...* |
-| | L3 | *Evaluating...* | *Evaluating...* | *Evaluating...* |
-| **Standard Agent** | L1 | *Evaluating...* | *Evaluating...* | *Evaluating...* |
-| | L2 | *Evaluating...* | *Evaluating...* | *Evaluating...* |
-| | L3 | *Evaluating...* | *Evaluating...* | *Evaluating...* |
+| **Task Decomposition Tree** | L1 | 64.0% | 2.72 | $0.00013 |
+| | L2 | 68.0% | 11.64 | $0.00154 |
+| | L3 | 40.0% | 21.83 | $0.00340 |
+| **Tree-of-Thought** | L1 | 60.0% | 15.87 | $0.00000 |
+| | L2 | 28.0% | 17.25 | $0.00000 |
+| | L3 | 40.0% | 129.95 | $0.00000 |
+| **Standard Agent** | L1 | 56.0% | 3.85 | $0.00000 |
+| | L2 | 28.0% | 3.37 | $0.00000 |
+| | L3 | 24.0% | 4.71 | $0.00000 |
 
-*Note: Benchmarks are currently being evaluated. Results will be updated upon completion. Expected completion time: 2-4 hours. Estimated total cost: $0.74-$1.39.*
+*Note: Benchmark validity is unverified 
 
 ### Hypothesis
 
