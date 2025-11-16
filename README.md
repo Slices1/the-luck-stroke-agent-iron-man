@@ -53,7 +53,7 @@ pip3 install PyYAML python-dotenv strands-agents strands-agents-tools strands-ag
 python3 chat.py
 ```
 
-The program will ask which Agent you want to use upon running like above. Alternatively, you can pass it as an argument like below.????????
+The program will ask which Agent you want to use upon running like above. Alternatively, you can pass it as an argument like below.
 
 ```bash
 python3 chat.py --agent=tree-of-thought-agent
