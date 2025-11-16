@@ -20,7 +20,7 @@ One with
 - `config/` -> YAML configuration files
 - `resources/` -> README.md media files
 
-## ?§ª Features
+## Features
 
 - 3 Orchestration implementations:
   
@@ -40,7 +40,7 @@ One with
   
   - `--rephrase` rephrase in own words first
 
-## ?š€ How to Run
+## How to Run
 
 The main entry point is `chat.py`. It will automatically find the project root, set up the import paths, load the config, and run the agent.
 You can also run `demo/run_demo.py` to show a demo of each feature of the program.
@@ -77,7 +77,7 @@ This "Task Decomposition Tree" is built, validated, and executed in a three-phas
 
 ---
 
-### ?Œ³ The Process Explained
+### The Process Explained
 
 #### 1. Phase 1: Decomposition (The "Planner" Agent)
 
@@ -122,7 +122,7 @@ This synthesis continues up the tree until the solutions are merged all the way 
  (Solver Agent)    (Solver Agent)      (Solver Agent)     (Solver Agent)
 ```
 
-### ?’¡ Key Components
+### Key Components
 
 - **Decomposer (LLM):** The "planner" that breaks complex tasks into smaller sub-tasks.
 
