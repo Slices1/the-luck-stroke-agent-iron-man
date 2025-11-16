@@ -12,6 +12,7 @@ sys.path.insert(0, project_root)
 from agent.controller import AgentController
 from utils.logging_utils import setup_logging
 from utils.config_loader import load_config
+from optimise.model_selector import choose_model
 
 def main():
     # 1. Setup Logging
@@ -27,7 +28,7 @@ def main():
     logger.info(f"Config loaded. Agent timeout set to: {config.get('timeouts', {}).get('step')}")
 
     # 3. Initialize Agent (Agent-Logic Team)
-    agent = AgentController.model()
+    controller = AgentController(config)
     logger.info("AgentController initialized. Ready for conversation.")
 
     # 4. Start Interactive Chat Loop
@@ -39,7 +40,7 @@ def main():
     while True:
         try:
             # Get user input from the console
-            user_input = agent.callingAgent.prompting()  
+            user_input = input("You: ").strip()
             
             # Open a banner for the logs
             print("-"*13 + " Logs " + "-"*12)
@@ -51,34 +52,18 @@ def main():
                 logger.info("Chat session ended by user.")
                 break  # Exit the while loop
 
-            if user_input.lower() in ['switch agent']:
-                print("Select an agent to switch to (1, 2, 3): ")
-                if user_input.lower() in ['1', 'one']:
-                    print("Agent 1 is chosen. Enter your query:")
-                    # Get user input from the console
-                    user_input = input("You: ")    
-                    # Open a banner for the logs
-                    print("-"*13 + " Logs " + "-"*12)
-                    break  # Exit the while loop
-                if user_input.lower() in ['2', 'two']:
-                    print("Agent 2 is chosen. Enter your query:")
-                    # Get user input from the console
-                    user_input = input("You: ")    
-                    # Open a banner for the logs
-                    print("-"*13 + " Logs " + "-"*12)
-                    break  # Exit the while loop
-                if user_input.lower() in ['3', 'three']:
-                    print("Agent 3 is chosen. Enter your query:")
-                    # Get user input from the console
-                    user_input = input("You: ")    
-                    # Open a banner for the logs
-                    print("-"*13 + " Logs " + "-"*12)
-                    break  # Exit the while loop
-                break  # Exit the while loop
+            
 
-            # Send the input to the agent and get the response
-            logger.info(f"Input: '{user_input}'")
-            agent_response = agent.run_step(user_input)
+            # Decide which model/implementation to use for this input
+            selected_model = choose_model(user_input)
+            # Expose this choice to other modules (AgentController calls choose_model internally)
+            # We set an env var so the optimiser's chooser can pick up the user's selection
+            import os
+            os.environ["CHAT_SELECTED_MODEL"] = selected_model
+
+            logger.info(f"Input: '{user_input}' (task_type -> selected model: {selected_model})")
+            # Send the input to the agent controller pipeline and get the response
+            agent_response = controller.run_step(user_input)
             
             # Print the agent's response to the console
             logger.info(f"Output: '{agent_response}'")
