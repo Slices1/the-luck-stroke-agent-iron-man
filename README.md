@@ -8,7 +8,7 @@ One with standard orchestration
 
 One with Tree-of-Thoughts orchestration
 
-One with 
+One with the Task Decomposition Tree 
 
 ## Structure
 

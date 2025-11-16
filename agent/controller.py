@@ -83,7 +83,8 @@ Respond with ONLY one word: low, medium, or high."""
             response = self.classifier_agent(classification_prompt)
 
             # Parse response and extract difficulty
-            difficulty = response.strip().lower()
+            # Convert AgentResult to string first
+            difficulty = str(response).strip().lower()
 
             # Validate response
             if 'low' in difficulty:
@@ -128,12 +129,37 @@ class TaskDecompositionTreeAgent:
 
     def __init__(self):
         self.logger = logging.getLogger(__name__)
-        self.logger.info("Task Decomposition Tree Agent initialized (placeholder)")
+
+        if not STRANDS_AVAILABLE:
+            raise ImportError("Strands is not installed. Please install strands package.")
+
+        try:
+            # Import the orchestrator
+            from agent.task_orchestrator import TaskOrchestrator
+
+            self.orchestrator = TaskOrchestrator()
+            self.logger.info("Task Decomposition Tree Agent initialized successfully")
+        except Exception as e:
+            self.logger.error(f"Failed to initialize Task Decomposition Tree Agent: {e}")
+            raise
 
     def run(self, user_input):
-        """Process input using Task Decomposition Tree (placeholder)."""
-        self.logger.warning("Task Decomposition Tree Agent called but not yet implemented")
-        return "Task Decomposition Tree Agent is not yet implemented. Please use another agent."
+        """Process input using Task Decomposition Tree."""
+        try:
+            self.logger.info(f"Processing task with Task Decomposition Tree: {user_input}")
+
+            # Process the task through the three-phase pipeline
+            result = self.orchestrator.process_task(user_input)
+
+            # Get tree summary
+            summary = self.orchestrator.get_tree_summary()
+            self.logger.info(f"Task completed. Tree stats: {summary}")
+
+            return result
+
+        except Exception as e:
+            self.logger.error(f"Task Decomposition Tree Agent error: {e}", exc_info=True)
+            return f"Error processing request: {e}"
 
 
 class AgentController:

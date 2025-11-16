@@ -1,0 +1,107 @@
+{
+    "L1: Task 1 (Simple Arithmetic)": [
+        "624",
+        "272",
+        "48",
+        "37",
+        "94"
+    ],
+    "L1: Task 2 (String Reversal)": [
+        "iyazxd",
+        "gcxrvdm",
+        "fjrmlog",
+        "lmhoiv",
+        "qdrsc"
+    ],
+    "L1: Task 3 (Find Max Number)": [
+        "98",
+        "96",
+        "82",
+        "94",
+        "94"
+    ],
+    "L1: Task 4 (Palindrome Check)": [
+        "True",
+        "False",
+        "True",
+        "False",
+        "True"
+    ],
+    "L1: Task 5 (Count Vowels)": [
+        "2",
+        "0",
+        "3",
+        "0",
+        "1"
+    ],
+    "L2: Task 1 (Fill-in-the-Blank Math)": [
+        "(3, 9)",
+        "(10, 5)",
+        "(50, 5)",
+        "(4, 4)",
+        "(2, 3)"
+    ],
+    "L2: Task 2 (Sort List)": [
+        "[87, 75, 61, 56, 20, 12, 6]",
+        "[98, 86, 76, 66, 13, 6, 2]",
+        "[95, 57, 38, 35, 33, 31, 15]",
+        "[95, 88, 70, 59, 54, 25, 20]",
+        "[99, 91, 85, 68, 58, 55, 53]"
+    ],
+    "L2: Task 3 (JSON Field Extraction)": [
+        "{\"name\": \"Alice\", \"email\": \"alice@web.com\"}",
+        "{\"SKU\": \"L-456\", \"Price\": 999}",
+        "{\"level\": \"ERROR\", \"message\": \"Failed login\"}",
+        "{\"Bob\": \"bob@work.com\", \"Carol\": \"carol@work.com\"}",
+        "{\"ID\": 9, \"Color\": \"Red\"}"
+    ],
+    "L2: Task 4 (Instruction Ordering)": [
+        "['Get cup', 'Add tea bag', 'Boil water', 'Pour water']",
+        "['Get cup', 'Add tea bag', 'Boil water', 'Pour water']",
+        "['Get cup', 'Add tea bag', 'Boil water', 'Pour water']",
+        "['Get cup', 'Add tea bag', 'Boil water', 'Pour water']",
+        "['Get cup', 'Add tea bag', 'Boil water', 'Pour water']"
+    ],
+    "L2: Task 5 (Find and Replace)": [
+        "The blue car and the blue boat.",
+        "I like oranges and bananas. Apples are great.",
+        "prod@example.com is a prod email.",
+        "File moved from -tmp- to -var-.",
+        "Hello world, goodbye universe."
+    ],
+    "L3: Task 1 (Logic Grid Puzzle)": [
+        "Ann",
+        "Tokyo",
+        "Python",
+        "Coder",
+        "Green"
+    ],
+    "L3: Task 2 (Task Dependency Planning)": [
+        "['A', 'B', 'C']",
+        "['A', 'B', 'C', 'D'] or ['A', 'C', 'B', 'D']",
+        "['A', 'B', 'C'] or ['B', 'A', 'C']",
+        "['A', 'B', 'C', 'D', 'E'] or ['D', 'E', 'A', 'B', 'C']",
+        "Circular dependency detected"
+    ],
+    "L3: Task 3 (Data Restructuring)": [
+        "{\"fruit\": [{\"id\": 1, \"name\": \"apple\"}, {\"id\": 3, \"name\": \"banana\"}], \"veg\": [{\"id\": 2, \"name\": \"carrot\"}]}",
+        "[{\"user\": \"alice\", \"action\": \"view\", \"item\": \"1\"}, {\"user\": \"bob\", \"action\": \"buy\", \"item\": \"2\"}, {\"user\": \"alice\", \"action\": \"logout\"}]",
+        "{\"A\": [\"B\", \"C\"], \"B\": [\"D\"]}",
+        "{\"apple\": 3, \"banana\": 2, \"orange\": 1}",
+        "{\"users\": [{\"id\": 1, \"name\": \"Alice\"}, {\"id\": 2, \"name\": \"Bob\"}], \"items\": [{\"id\": 1, \"name\": \"Book\"}]}"
+    ],
+    "L3: Task 4 (Simple Algorithm (Coding))": [
+        "[3]",
+        "{'even': [2], 'odd': [1, 3]}",
+        "True",
+        "{'a': 2, 'b': 1}",
+        "13"
+    ],
+    "L3: Task 5 (Knights & Knaves)": [
+        "A is a Knave, B is a Knight.",
+        "A is a Knave, B is a Knight.",
+        "A is a Knight, B is a Knight.",
+        "A is a Knight, B is a Knave, C is a Knight.",
+        "A is a Knave, B is a Knight."
+    ]
+}

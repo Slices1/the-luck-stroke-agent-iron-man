@@ -1,0 +1,107 @@
+{
+    "L1: Task 1 (Simple Arithmetic)": [
+        "What is 48 * 13?",
+        "What is 68 * 4?",
+        "What is 67 - 19?",
+        "What is 55 - 18?",
+        "What is 92 + 2?"
+    ],
+    "L1: Task 2 (String Reversal)": [
+        "Reverse this string: 'dxzayi'",
+        "Reverse this string: 'mdvrxcg'",
+        "Reverse this string: 'golmrjf'",
+        "Reverse this string: 'viohml'",
+        "Reverse this string: 'csrdq'"
+    ],
+    "L1: Task 3 (Find Max Number)": [
+        "Find the largest number in this list: [38, 80, 9, 56, 50, 98]",
+        "Find the largest number in this list: [33, 7, 96, 87, 6, 71]",
+        "Find the largest number in this list: [82, 65, 9, 71, 11, 25]",
+        "Find the largest number in this list: [16, 94, 77, 84, 6, 49]",
+        "Find the largest number in this list: [63, 1, 51, 14, 94, 67]"
+    ],
+    "L1: Task 4 (Palindrome Check)": [
+        "Is the word 'madam' a palindrome?",
+        "Is the word 'test' a palindrome?",
+        "Is the word 'racecar' a palindrome?",
+        "Is the word 'python' a palindrome?",
+        "Is the word 'level' a palindrome?"
+    ],
+    "L1: Task 5 (Count Vowels)": [
+        "How many vowels are in the word 'apple'?",
+        "How many vowels are in the word 'rhythm'?",
+        "How many vowels are in the word 'banana'?",
+        "How many vowels are in the word 'sky'?",
+        "How many vowels are in the word 'strength'?"
+    ],
+    "L2: Task 1 (Fill-in-the-Blank Math)": [
+        "Fill in the missing numbers ( _, _ ): _ * 4 - _ / 3 = 5",
+        "Fill in the missing numbers ( _, _ ): _ + 2 * _ - 5 = 15",
+        "Fill in the missing numbers ( _, _ ): (100 - _) / _ + 1 = 11",
+        "Fill in the missing numbers ( _, _ ): _ * _ + 4 = 20",
+        "Fill in the missing numbers ( _, _ ): 8 / _ + 9 * _ = 30"
+    ],
+    "L2: Task 2 (Sort List)": [
+        "Sort this list in descending order: [56, 12, 75, 6, 20, 87, 61]",
+        "Sort this list in descending order: [13, 76, 2, 6, 66, 98, 86]",
+        "Sort this list in descending order: [38, 35, 33, 15, 57, 31, 95]",
+        "Sort this list in descending order: [20, 88, 70, 25, 54, 95, 59]",
+        "Sort this list in descending order: [68, 99, 85, 55, 53, 91, 58]"
+    ],
+    "L2: Task 3 (JSON Field Extraction)": [
+        "From this text: \"User Alice (id: 123) is active. Email: alice@web.com.\" Extract the user's name and email into a JSON object.",
+        "From this text: \"Product: Laptop, SKU: L-456, Price: 999, InStock: true.\" Extract the SKU and Price into a JSON object.",
+        "From this text: \"Log: { \"timestamp\": \"2025-01-01\", \"level\": \"ERROR\", \"message\": \"Failed login\" }.\" Extract the level and message into a JSON object.",
+        "From this text: \"Meet Bob (bob@work.com), his manager is Carol (carol@work.com).\" Extract all names and emails into a JSON object.",
+        "From this text: \"ID: 9, Name: Stapler, Color: Red\" Extract the ID (as a number) and Color into a JSON object."
+    ],
+    "L2: Task 4 (Instruction Ordering)": [
+        "Put these steps in the correct order: ['Boil water', 'Add tea bag', 'Get cup', 'Pour water']",
+        "Put these steps in the correct order: ['Boil water', 'Get cup', 'Pour water', 'Add tea bag']",
+        "Put these steps in the correct order: ['Add tea bag', 'Pour water', 'Boil water', 'Get cup']",
+        "Put these steps in the correct order: ['Boil water', 'Add tea bag', 'Pour water', 'Get cup']",
+        "Put these steps in the correct order: ['Pour water', 'Add tea bag', 'Boil water', 'Get cup']"
+    ],
+    "L2: Task 5 (Find and Replace)": [
+        "In the sentence 'The red car and the red boat.', replace all instances of 'red' with 'blue'.",
+        "In the sentence 'I like apples and bananas. Apples are great.', replace all instances of 'apples' with 'oranges'.",
+        "In the sentence 'test@example.com is a test email.', replace all instances of 'test' with 'prod'.",
+        "In the sentence 'File moved from /tmp/ to /var/.', replace all instances of '/' with '-'.",
+        "In the sentence 'Hello world, hello universe.', replace all instances of 'hello' with 'goodbye'."
+    ],
+    "L3: Task 1 (Logic Grid Puzzle)": [
+        "3 people (Ann, Bob, Cal) have 3 pets (Cat, Dog, Fish). Clues: 1. Ann is allergic to cats. 2. Bob owns the Dog. Who has the Fish?",
+        "3 friends (Dan, Eva, Fay) live in 3 cities (London, Paris, Tokyo). Clues: 1. Dan has never been to Asia. 2. Eva lives in Paris. Where does Fay live?",
+        "3 projects (X, Y, Z) are written in 3 languages (Python, Java, Rust). Clues: 1. Project X is not Java. 2. Project Y is Rust. 3. The Java project is not Z. What language is Project X?",
+        "3 employees (Leo, Max, Nina) have 3 jobs (Coder, Designer, Manager). Clues: 1. Leo cannot draw. 2. Max is the Manager. 3. Nina is not the Coder. What is Leo's job?",
+        "3 cars (A, B, C) are 3 colors (Red, Green, Blue). Clues: 1. Car A is Red. 2. Car B is not Green. What color is Car C?"
+    ],
+    "L3: Task 2 (Task Dependency Planning)": [
+        "Tasks: {A, B, C}. Dependencies: {A->B, B->C}. What is the correct execution order?",
+        "Tasks: {A, B, C, D}. Dependencies: {A->B, A->C, B->D, C->D}. Give one valid execution order.",
+        "Tasks: {A, B, C}. Dependencies: {A->C, B->C}. Give one valid execution order.",
+        "Tasks: {A, B, C, D, E}. Dependencies: {A->B, B->C, D->E}. Give one valid execution order.",
+        "Tasks: {A, B, C}. Dependencies: {A->B, B->C, C->A}. What is the problem here?"
+    ],
+    "L3: Task 3 (Data Restructuring)": [
+        "Restructure this flat list into a nested JSON object, grouping by \"category\": [{\"id\": 1, \"category\": \"fruit\", \"name\": \"apple\"}, {\"id\": 2, \"category\": \"veg\", \"name\": \"carrot\"}, {\"id\": 3, \"category\": \"fruit\", \"name\": \"banana\"}]",
+        "Convert this log string to a nested JSON object (list of actions): \"user=alice, action=view, item=1; user=bob, action=buy, item=2; user=alice, action=logout\"",
+        "Take this list of edges [(\"A\", \"B\"), (\"A\", \"C\"), (\"B\", \"D\")] and represent it as a JSON adjacency list (e.g., {\"A\": [\"B\", \"C\"], ...}).",
+        "Summarize this list into a JSON object with counts for each fruit: [\"apple\", \"banana\", \"apple\", \"orange\", \"banana\", \"apple\"]",
+        "Restructure this JSON {\"user_1\": \"Alice\", \"user_2\": \"Bob\", \"item_1\": \"Book\"} into a new JSON with \"users\" and \"items\" keys."
+    ],
+    "L3: Task 4 (Simple Algorithm (Coding))": [
+        "Write a Python function `find_common(list1, list2)`. What is the result of `find_common([1, 2, 3], [3, 4, 5])`?",
+        "Write a Python function `group_by_parity(numbers)`. What is the result of `group_by_parity([1, 2, 3])`?",
+        "Write a Python function `is_valid_email(email_str)`. What is the result of `is_valid_email('test@me.com')`? (Simplified check: must contain one '@' and one '.').",
+        "Write a Python function `word_count(sentence)`. What is the result of `word_count('a b a')`?",
+        "Write a Python function `fibonacci(n)`. What is the result of `fibonacci(7)`? (starting with 0, 1)"
+    ],
+    "L3: Task 5 (Knights & Knaves)": [
+        "You meet two people, A and B. A says, \"B is a Knave.\" B says, \"A is a Knave.\" What are A and B?",
+        "You meet two people, A and B. A says, \"We are both Knights.\" B says, \"A is lying.\" What are A and B?",
+        "You meet two people, A and B. A says, \"I am a Knave, or B is a Knight.\" What are A and B?",
+        "You meet three people, A, B, and C. A says, \"B is a Knave.\" B says, \"C is a Knave.\" C says, \"They are both Knaves.\" What are A, B, and C?",
+        "You meet two people, A and B. A says, \"We are the same type (both Knights or both Knaves).\" B says, \"We are different types.\" What are A and B?"
+    ]
+}
